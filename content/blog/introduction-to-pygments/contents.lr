@@ -1,0 +1,21 @@
+title: Helpful logging
+---
+pub_date: 2019-02-05
+---
+author: Thomas Aglassinger
+---
+intro:
+
+[Pygments](https://pygments.org/) is a Python packages to syntax highlight
+more than 300 programming languages and text formats. 
+
+This PyGRAZ talk explains the basics of Pygments and then shows to to utilize
+its API to quickly implement simple source code converters. It also
+describes how to implements your own lexer.
+
+---
+body:
+
+TODO
+
+https://www.slideshare.net/roskakori/introduction-to-pygments

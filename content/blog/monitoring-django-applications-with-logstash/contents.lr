@@ -1,0 +1,35 @@
+title: Monitoring Django applications with Logstash
+---
+pub_date: 2019-07-02
+---
+author: Thomas Aglassinger
+---
+intro:
+
+Django applications running on an Apache web server can be monitored based on log messages transferred by Python log handlers and filebeat, collected and parsed by Logstash, stored in Elasticsearch and analyzed with Kibana and Grafana.
+
+This talk shows how to setup and configure Django, Python logging and Apache to get the most out of your logging data.
+
+---
+body:
+
+Logstash is a data collecting and log parsing engine which uses Elasticsearch as target storage. Combined with Kibana and Grafana it is a popular solution to analyze and monitor server side applications.
+
+This talk explains how to configure Logstash and its related tools to effectively monitor a Django application running on an Apache web server.
+
+Topics covered are:
+
+- Overview
+- Basic architecture
+- Installation: package or docker
+- Resource usage
+- Python logging handlers for logstash
+- Elastic common schema (ECS) for log entries
+- Parsing Apache logs
+- Access_log vs error_log
+- Time formats and zones
+- Mods to extend the logging information
+- Mapping Python and Apache log levels
+- Debugging grok filters
+- Sending log files with Filebeats
+- Lessons learned

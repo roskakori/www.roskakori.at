@@ -1,0 +1,77 @@
+title: Python instead of shell scripts
+---
+pub_date: 2018-06-09
+---
+author: Thomas Aglassinger
+---
+intro:
+
+At the Grazer Linuxtage 2018 I gave a talk about using Python instead of
+shell scripts, especially when it comes to complex shell scripts that quickly
+become fragile and difficult to maintain.
+
+---
+body:
+
+While shell scripts are useful for quick solutions that can be implemented
+using a few commands and pipes, things like numeric computations, string
+operations, date manipulation or error handling end up in code that is hard
+to write and even harder to read for other people. Handling non ASCII
+characters or file names with blank turns out to be a challenge for most
+shell scripts seen in the wild.
+
+With Python however, these things are comparably simple and clean to do. On
+the other hand, Python requires some basic knowledge of its standard library
+before you can write programs that perform similar tasks than shell scripts in
+comparably small time.
+
+This talk shows how to perform common tasks where shell scripts excel in
+Python. While the code naturally will be longer than the corresponding shell
+scripts it will also be more flexible and robust. These examples are intended
+as basis for your own scripts and easy to extend and modify.
+
+The specific topics covered are:
+
+* Print a message and use variables
+* Find a regular expression in a text file
+* Find files matching a pattern
+* Call an external program
+* Error handling
+* Parse command line options
+
+So for example if you want to find all lines containing the word "print" in all
+"`*.py`" files in a folder and the included sub-folder a shell call could look
+like:
+
+```bash
+grep "\bprint\b" `find some_folder -name "*.py"`
+```
+
+In case you have too many files, this command line gets too long resulting in
+an error like::
+
+> /usr/bin/grep: Argument list too long
+
+You can get around this of course using `xargs` but still the backtick
+operator can be seen a lot because it is very convenient. Also, how find a
+search term containing an non ASCII character encoded differently to the
+shell encoding?
+
+To do the same in Python, we need to `re` module to process regular
+expressions and the `open()` function. Here's a small python function that
+mimics the basic functionality of grep:
+
+```python
+    def grep(pattern, path, encoding='utf-8'):
+        regex = re.compile(pattern)
+
+        with open(path, encoding=encoding) as file_to_grep:
+            for line in file_to_grep:
+                if regex.search(line):
+                    yield line.rstrip('\n')  # Return line by line as iterator
+```
+
+The `glob()` function in the `glob` module can find files matching a shell
+pattern. The placeholder `**` can be used to represent any or none folder or
+sub-folder. To actually activate it, the parameter `recursive=True` has to
+be passed.

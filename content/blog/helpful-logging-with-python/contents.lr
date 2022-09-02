@@ -1,0 +1,18 @@
+title: Django meets flutter
+---
+pub_date: 2022-07-04
+---
+author: Thomas Aglassinger
+---
+intro:
+
+The Python logging module or print statements are widely used to describe the actions a software performs with the intention to simplify error analysis after the fact, integrate application monitoring to quickly react on specific events and perform application archeology to learn about user behavior and usage patterns. 
+
+While the technical aspects of using loggers, formatters and handlers are well described in the respective documentation and various blogs, less thought is given on how to actually word log messages, which information to include/exclude and in which situations to apply certain log levels. In this talk we are going to take a closer look at these topics in order to make your software easier to debug and support. 
+
+---
+body:
+
+TODO
+
+Also add slides to <https://pygraz.org/admin/meetups/session/86/change/?_changelist_filters=o%3D2%26type__id__exact%3D1>

@@ -1,0 +1,16 @@
+title: Multiple Django applications on a single server with nginx
+---
+pub_date: 2021-11-02
+---
+author: Thomas Aglassinger
+---
+intro:
+
+While the Python logging module makes it simple to add flexible logging to your application, wording log messages and choosing the appropriate level to maximize their helpfulness is a topic hardly covered in the documentation. This talk give guidelines on when to choose a certain log level, what information to include and which wording templates to use. 
+
+---
+body:
+
+TODO
+
+https://www.slideshare.net/roskakori/helpful-logging-with-python

@@ -1,0 +1,18 @@
+_model: page
+---
+title: Publications
+---
+body:
+
+At my [slideshare.net profile](https://www.slideshare.net/roskakori) you can
+find presentations to various topics at talked about at local user group
+meetings and conferences.
+
+* "Kanban zur Abwicklung von Reporting-Anforderungen" (German only): A talk given at the "9. Anwenderkonferenz für Softwarequalität und Test 2011" in Graz, Austria.
+  It describes how Kanban can help to handle orders for standard and ad hoc reports in Banking. Major challenges in this environment are a large number of possible clients, a wide spread in complexity and cost, and a broad set of technologies. Kanban encourages to track current orders in a white board, limit the orders processed at the same time and let the client prioritize the sequence of delivery. This ensures a constant stream of delivery with the client getting his most important items first while the people handling the requests remain in a state of flow.
+  An article version ([PDF](Kanban zur Abwicklung von Reporting-Anforderungen.pdf)) is available from Peischl, B. (ed.) "Ausgewählte Beiträge zur Anwenderkonferenz für Software Qualität und Test 2011 ASQT 2011" (page 23 - 31), published by Österreichische Computer-Gesellschaft (OCG) in May 2012.
+
+* "Error Handling in Structured and Object-Oriented Programming Languages" [PDF](Error Handling in Structured and Object-Oriented Programming Languages.pdf): My master's thesis, which examines how well error handling mechanisms in various programming languages support the development of robust software. It also analyzes conditions that lead to error, including mental models and situations that result in human error. Additionally it derives a simple schema for phrasing helpful error messages and outlines how well designed software can support this.
+
+* Various articles for AmigaScene, an Austrian online Amigazine written by the Amiga user group of Graz. While the server is offline by now, you can still download its issues (in German) from [aminet:mags/german/ascene*.lha](https://aminet.net/search?name=ascene&path[]=mags/german&o_date=older&date=20000101).
+

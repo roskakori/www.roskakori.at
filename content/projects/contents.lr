@@ -1,0 +1,25 @@
+title: Projects
+---
+body:
+
+One of my hobbies is software development, usually resulting in applications
+that scratch an itch of mine. Here's a short summary of the most recent ones.
+You can also visit my [GitHub profile](https://github.com/roskakori) for more
+information.
+
+* [pygount](https://github.com/roskakori/pygount) count lines of code for hundreds
+  of programming languages. It utilizes [pygments'](https://pygments.org/) vast
+  collection of lexers typically used for syntax highlighting.
+* [Cutplace](https://github.com/roskakori/cutplace/), a tool to validate that
+  tabular data conform to an quite easy to read and write formal interface
+  description. (License: open source; platform: independent; programming
+  language: Python)
+* [loxun](https://pypi.org/project/loxun/>`, a Python module to write
+  large output in XML using Unicode and namespaces. Of course you can also
+  use it for small XML output with plain 8 bit strings and no namespaces. At
+  [EuroPython 2012](https://ep2012.europython.eu/) I did a
+  [lightning talk](https://www.youtube.com/watch?v=f1t2M2wcY2k#t=26m20s)
+  about the events that lead to this module, accompanied by
+  [slides](https://www.slideshare.net/roskakori/large-output-in-xml-with-unicode-and-namespace>)
+  and [example code](https://gist.github.com/3067859) (License: open
+  source; platform: independent; programming language: Python)

@@ -1,0 +1,6 @@
+/.doit.db.db
+/.idea
+/cache
+/output
+/venv/
+*.iml

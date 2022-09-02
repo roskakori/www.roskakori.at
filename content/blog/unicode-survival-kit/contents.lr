@@ -1,0 +1,43 @@
+title: (German) Unicode survival kit for Python 
+---
+pub_date: 2014-10-07
+---
+author: Thomas Aglassinger
+---
+intro:
+
+Mentioning Unicode in front of Python developers often provokes negative emotions
+or traumatic reactions. Unlike with languages like Java or C#, Python did not support
+Unicode from the beginning. As a result, `UnicodeError`s can become a common
+occurrence, especially when working with external data.
+
+The aim of the presentation is to enable the developer to design program code in such 
+a way that internally only Unicode is used. This ensures that special characters like
+German umlauts can always be represented correctly and `UnicodeError` can be avoided.
+
+---
+body:
+
+Unicode ist für viele Python-Entwickler ein Reizthema, da es im Unterschied zu Sprachen wie Java und C# nicht von 
+Anfang an in die Sprache integriert war. In Folge kann es vor allem beim Arbeiten mit externen Daten schnell zu 
+einem `UnicodeError` kommen.
+
+Ziel des Vortrag ist, den Entwickler in die Lage zu versetzen, den 
+Programmcode so zu gestalten, dass intern nur Unicode verwendet wird. 
+Damit sind Sonderzeichen wie Umlaute korrekt dargestellt und `UnicodeError`
+vermieden.
+
+Agenda:
+
+* Wozu Unicode?
+* Unicode und Strings in Python
+* Die wichtigsten Encodings
+* Python Default Encoding
+* Terminal Encoding
+* Lesen und Schreiben von Unicode
+* Umwandlung
+* Unterschiede Python 2 und Python 3
+
+TODO 
+
+https://www.slideshare.net/roskakori/erste-hilfekasten-fuer-unicode-mit-python-54985173
