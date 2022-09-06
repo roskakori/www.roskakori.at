@@ -7,19 +7,124 @@ that scratch an itch of mine. Here's a short summary of the most recent ones.
 You can also visit my [GitHub profile](https://github.com/roskakori) for more
 information.
 
+## Current projects
+
 * [pygount](https://github.com/roskakori/pygount) count lines of code for hundreds
   of programming languages. It utilizes [pygments'](https://pygments.org/) vast
-  collection of lexers typically used for syntax highlighting.
+  collection of lexers typically used for syntax highlighting. The first
+  version was intended as a joke on tools like [SLOCCount](https://dwheeler.com/sloccount/)
+  or [CLOC](http://cloc.sourceforge.net/) to show that a similar tool written
+  in Python can count SLOC's for more programming languages than it has SLOC's
+  itself.
+  Over time, functionality was added and these days it is used for serious
+  tracking of project SLOC and research projects.
 * [Cutplace](https://github.com/roskakori/cutplace/), a tool to validate that
   tabular data conform to an quite easy to read and write formal interface
-  description. (License: open source; platform: independent; programming
-  language: Python)
-* [loxun](https://pypi.org/project/loxun/>`, a Python module to write
-  large output in XML using Unicode and namespaces. Of course you can also
+  description.
+* [ebcdic](https://pypi.org/project/ebcdic/), a collection of Python codecs
+  for various [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC) encodings. I
+  used it a lot while working in finance when processing or sanitizing data
+  we got from the mainframe but wanted to continue with on a modern platform, 
+  typically in relation with data warehousing. Luckily, this is easy to 
+  maintain because EBCDIC does not change that much.
+* [loxun](https://pypi.org/project/loxun/), a Python module to write
+  large output in XML using Unicode and namespaces. Of course, you can also
   use it for small XML output with plain 8 bit strings and no namespaces. At
   [EuroPython 2012](https://ep2012.europython.eu/) I did a
   [lightning talk](https://www.youtube.com/watch?v=f1t2M2wcY2k#t=26m20s)
   about the events that lead to this module, accompanied by
   [slides](https://www.slideshare.net/roskakori/large-output-in-xml-with-unicode-and-namespace>)
-  and [example code](https://gist.github.com/3067859) (License: open
-  source; platform: independent; programming language: Python)
+  and [example code](https://gist.github.com/3067859)
+
+## Major contributions
+
+- [Pygments](https://pygments.org/), a generic syntax highlighter that provides
+  lexers for hundreds or programming languages and text formats. When I was 
+  working in finance, I added lexers for some of the obscure languages we were
+  using on the mainframe (Easytrieve, JCL, Rexx) and when processing data
+  (Transact-SQL, VBScript). Because of my own tool pygount (see above for details)
+  heavily uses pygments, I occasionally help tracking down or fixing bugs in
+  lexers from other people.
+- For [dynAmite](http://amisource.de/dynamite/), a multi player bomberman clone
+  for AmigaOS I authored a couple of 
+  [maps](http://amigazeux.net/dynamite/thevault.php?creator=roskakori)
+  and a style named "[obvious](http://amisource.de/dynamite/shots/obvious.html)".
+  The latter makes it easy to map colors from the chat window to actual players. 
+  W00t.
+
+
+## Old projects
+
+The projects below are not really maintained anymore. Nevertheless,
+(possibly after some convincing) they should still compile and run
+on modern hardware and platforms.
+
+- [ASCII-Scramble](/projects/ascii-scramble/), a shoot'em up
+  for MS DOS text mode using only ASCII characters written in
+  Pascal. I developed it on an ancient 8086 laptop while working 
+  as postman during a holiday job in the 1990's when living at 
+  my parents' place. There, I was away from my more fun and 
+  powerful Amiga computer but still could not resist the urge to
+  code something. Anything. On any platform. In any language. Now.
+- [Hsc](https://github.com/mbethke/hsc)), probably one of the first
+  static site generators (though this term did not exist yet and
+  the manual refers to it as "HTML preprocessor"). Written in C, 
+  maintained by me until 1998. The project was later picked up 
+  and improved a lot by Matthias Bethke.
+- [LichtTools](http://lichttools.sourceforge.net/),
+  probably one of the first flashlight applications though  
+  the term did not exist then and the manual refers to it
+  as "bulb simulator". It was originally designed and implemented
+  by Michael Gehmair during a night when his only bulb broke while
+  learning for an important exam scheduled for the next day. It
+  has been ported to various platforms by various people.
+- [Jomic](http://jomic.sourceforge.net/), an early, portable
+  viewer for comic book archives using CBZ or CBR as format. 
+  It is written in Java and convinced me that I should move
+  to different programming languages for hobby projects. 
+- [Grotag](http://sourceforge.net/projects/grotag/),
+  a platform independent viewer for documents in the 
+  [AmigaGuide](https://en.wikipedia.org/wiki/AmigaGuide) 
+  hypertext format. It can also convert them to DocBook XML
+  for further editing on contemporary platforms.
+- [rcs4cvs2svn](http://pypi.python.org/pypi/rcs4cvs2svn/)
+  prepares RCS projects for processing with 
+  [cvs2svn](http://cvs2svn.tigris.org/). You can also
+  use it as replacement for various rcs2cvs scripts floating
+  around.
+- [Tratihubis](http://pypi.python.org/pypi/tratihubis/)
+  converts [Trac](https://trac.edgewall.org/) tickets to 
+- [Github](https://github.com) issues. After I moved all 
+  my Trac projects to GitHub, I naturally lost interest in it.
+  It does not work anymore, but might be useful as basis for
+  an updated version.
+
+
+# Ancient Amiga projects
+
+- [Sofa](https://github.com/roskakori/sofa), a port of the SmartEiffel Eiffel compiler (now forked to 
+  [LibertyEiffel](https://www.liberty-eiffel.org/)) for AmigaOS Classic. 
+  The binary is available from 
+  [aminet:dev/lang/sofa.lha](https://aminet.net/dev/lang/sofa.lha).
+- [envSOF](https://github.com/roskakori/envSOF), an Eiffel/Sofa 
+  developer environment for GoldEd (now called 
+  [CubicIDE](https://www.softwareandcircuits.com/division/amiga/products/cubic/index.html)). 
+  It simplifies developing Eiffel programs by adding syntax
+  coloring, a procedure browser and documentation browser.
+- [Vahunz](/projects/vahunz/) increases or
+  decreases the legibility or of source code names. It scans a
+  whole source code tree and collects variable and function
+  names in a dictionary. The user can then decide what to do
+  about each name: leave it untouched, assign a more meaningful
+  one, or let vahunz generate a random one. (License: open
+  source; platform independent; programming language: portable
+  C)
+- [WgetRexx](/projects/wgetrexx/) integrates the
+  recursive download tool [wget](http://www.gnu.org/software/wget/)
+  into various Amiga web browsers using ARexx. It makes it easy 
+  to create menu items that allow to download the currently visible
+  page or the whole directory branch related to it.
+- [Orbit Amiga 68k](/projects/orbit/), a port of
+  the [Orbit space combat simulator](http://jony123.github.io/orbit/) for Amiga/68k. This was a
+  funny exercise in futility because it runs fine albeit too
+  slow to do anything really useful with it.

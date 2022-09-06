@@ -1,0 +1,124 @@
+_model: page
+---
+title: Orbit Amiga/68k port
+---
+body:
+
+Orbit is a freeware space combat simulator in the tradition of
+Elite, Wing Commander etc, originally written by Steve Belczyk for
+Win32/Linux systems. Here you can find the port for Amiga/68k by
+Thomas Aglassinger, which is derived from the 
+[Amige/PPC port](http://home.t-online.de/home/LucyG/orbit.html) by 
+Oliver Gantert. For more information, visit the
+[Official Orbit Homepage](http://jony123.github.io/orbit/)</a>.
+
+## News
+
+- 06-Sep-2022: Cleaned up site.
+- 15-Jul-2000: 
+  - Added some more detailed info about stack and memory needs.
+  - Added screenshot demonstrating networking on the same machine
+- 10-Jul-2000: Established site.
+
+## Requirements
+
+First, you need quite some hardware:
+
+- 68060 CPU
+- AGA, CyberGfx or Picasso96
+- 32MB of Fast RAM (On my machine, it consumes about 20MB during runtime)
+- 10MB of hard-disk space
+
+Next, you need a huge pile of libraries, drivers and utilities
+(unless you have them already). Fortunately, all of them are available
+for free:
+
+- [AHI](http://www.lysator.liu.se/(faq)/ahi/v4-site/), responsible for making noise.
+- [aminet:util/libs/lucyplay.lha](https://aminet.net/util/libs/lucyplay.lha),
+responsible for making it easier for programmers to make noise with AHI.
+- [aminet:util/libs/ixemul-48.0.lha](https://aminet.net/util/libs/ixemul-48.0.lha),
+  emulating a basic Posix API, which makes it a lot easier for programmers to
+  port programs relying on it.
+- [StormMesa](https://www.haage-partner.de/amiga/storm/mesa_e.htm),
+  responsible for drawing 3D graphics via OpenGL. You just need the
+  "Libs_68k" archive, unless you want to start developing yourself.
+- [aminet:util/boot/NewWPA8.lha](https://aminet.net/util/boot/NewWPA8.lha)
+  patches a couple of AmigaOS functions so that they are faster and work. This is only relevant
+  for AGA users of AmigaOS 3.0.
+
+Uff! That should do it.
+
+## Download
+
+You need two archives, which are both available from Aminet:
+
+- [aminet:game/shoot/Orbit_68k.lha](https://aminet.net/game/shoot/Orbit_68k.lha),
+containing the actual program
+- [aminet:game/shoot/Orbit_dat.lha](https://aminet.net/game/shoot/Orbit_dat.lha),
+containing the data about planets, ships etc
+
+## Installation
+
+Currently, the installation is not very Amiga-like. Maybe in a
+later version. For now:
+
+1. Extract the `Orbit_*.lha` archives wherever you like. They
+   expand to a directory named "Orbit", so you don't have to create one
+   manually.
+1. Install StormMesa. This seems a bit painful first, but basically
+   all you need is that every `*.library` ends up in
+   `libs:`. If you just want to run Orbit, don't bother too much
+   about the environment variables. For more details, see the section on "Tuning
+   Performance" below.
+1. Copy `lucyplay040.library` to `libs:` and remove the `040` in the name.
+1. Install AHI. This is trivial thanks to Installer.
+1. Install `ixemul.library`. This can also be a pain, but
+   concerning Orbit, just make sure that the appropriate file ends up in
+   `libs:`. Take care that it's optimized for your CPU if you're
+   concerned about performance. If you're not concerned about performance
+   yet, believe me, you will be after you ran Orbit the first time.
+   Remember, we're talking about 68k here.
+
+## Running
+
+Finally, the interesting part (again, not very Amiga like):
+
+
+1. Open a CLI and `cd` to the Orbit directory.
+1. Allocate some stack, for instance by typing `stack 60000`.
+   (I watched StackMon while running Orbit, and it announced a maximum of
+   about 50K, so this should be on the save side.)
+1. Basically, you can run Orbit by typing `orbit.exe`. But
+   this will not give you much performance. Read on...
+
+## Tuning Performance
+
+StormMesa offers a lot of options to finetune the OpenGL/Glut applications.
+Orbit is a Glut application, so you can use all the standard Glut options in the
+command line.
+
+For users of Z2 graphic cards and AGA, these are the most
+interesting ones:
+
+- `-forcefs` makes Orbit run on an own screen. Choose a small
+  one, then it's faster. If you have a Z2 graphics card, it makes sense
+  to use 320x240 because the Z2 bus becomes very slow with higher
+  resolutions. If you have AGA, you need the NewWP8 patch from Aminet.
+- `-fast` generally trades quality against speed
+- `-vfast` trades quality against speed event more violently
+- `-forcedb` uses double buffering
+
+On my trusty Amiga 2000 with a 68060/50, Picasso-II and CyberGfx
+v3, the following seems to work best:
+
+```bash
+stack 60000
+set MESA/FORCE_IR
+orbit.exe -vfast -forcefs -forcedb
+```
+In the screenmode requester select something like 320x240x16, so you
+won't need any dithering. I've provided some 
+[screenshots,](/projects/orbit/orbit-screenshots/) so you know what to 
+expect from the above configuration.
+
+Refer to the StormMesa manual for more options and details.

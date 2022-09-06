@@ -1,0 +1,1030 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>WgetRexx - Invoke Wget from Your Browser</title>
+</head><body bgcolor="#c8c8c8" text="#000000" link="#0000c8" vlink="#0e2d80">
+<h1>WgetRexx</h1>
+<p>This manual describes WgetRexx, <b>version 2.4</b> (20-Jun-2000).</p>
+<p>WgetRexx is an ARexx script to invoke Wget from your favourite Amiga WWW browser. It is designed in a way that you can easily maintain a copy of the interesting parts of the WWW on your local hard drive. </p>
+<p><img src="wgetrexx.png" alt="[Spinnakinni]" align="right" WIDTH="99" HEIGHT="98">This allows you to browse them without having to start your network, without having to worry if documents are still in the cache of the browser, without having to figure out the cryptic name of a certain document in your cache directory and without having to deal with slow, overloaded or/and unstable connections. </p>
+<p>WgetRexx is &copy; Thomas Aglassinger 1998-2000 and is copyrighted freeware. Therefor you are allowed to use it without paying and can also modify it to fit your own needs. You can redistribute it as long as the whole archive and its contents remain unchanged. </p>
+<p>The current version of this document and the program should be
+available from
+<a href="http://www.giga.or.at/~agi/wgetrexx/">http://www.giga.or.at/~agi/wgetrexx/</a>.
+</p>
+<h2><a name="contents">Contents</a></h2>
+<ul>
+<li><a href="#contents">Contents</a>
+<li><a href="#overview">Overview</a>
+<li><a href="#legal-issues">Legal Issues</a>
+<ul>
+<li><a href="#disclaimer">Disclaimer</a>
+<li><a href="#copyright">Copyright</a>
+<li><a href="#no-warranty">No Warranty</a>
+<li><a href="#distribution">Distribution</a>
+<li><a href="#copyright-others">Other Material</a>
+<li><a href="#copyright-sites">Copyright of Web Sites</a>
+</ul>
+<li><a href="#requirements">Requirements</a>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#install-wget">Installing <tt>Wget</tt></a>
+<li><a href="#install-web">Creating Your Local Web</a>
+<li><a href="#install-wget.rexx">Installing <tt>Wget.rexx</tt></a>
+</ul>
+<li><a href="#first-steps">First Steps</a>
+<li><a href="#example-configuration">Example Configuration</a>
+<li><a href="#example-usage">Usage of the Example Configuration</a>
+<li><a href="#cli-options">Command Line Options</a>
+<ul>
+<li><a href="#option-details">Get Some Details</a>
+<li><a href="#option-ask">Ask for Options</a>
+<li><a href="#option-screen">Messing with Screens</a>
+<li><a href="#option-wget">Specify Options for <tt>Wget</tt></a>
+<li><a href="#option-directory">Specify a Different Download Directory</a>
+<li><a href="#option-port">Select the Browser ARexx Port</a>
+<li><a href="#option-continue">Continue an Interrupted Download</a>
+<li><a href="#option-uri">Specify a URI</a>
+</ul>
+<li><a href="#outsourcing">Outsourcing Macros</a>
+<li><a href="#indexing">Generating an Index for Web:</a>
+<li><a href="#troubleshooting">Troubleshooting</a>
+<ul>
+<li><a href="#problems-wget.rexx">Problems with <tt>Wget.rexx</tt></a>
+<li><a href="#problems-wget">Problems with <tt>Wget</tt></a>
+<li><a href="#problems-aweb">Problems with AWeb</a>
+</ul>
+<li><a href="#updates">Updates and Support</a>
+<li><a href="#history">History</a>
+</ul>
+<h2><a name="overview">Overview</a></h2>
+<p>For those going to refuse to read this whole manual, here are the
+interesting parts: the <a href="#requirements">requirements</a> tell
+you where you can get needed stuff from, an <a
+href="#example-configuration">example configuration</a> shows
+how your macro menu might look like (and should terrify those away
+who don't know how to use <tt>Wget</tt>), a chapter about <a
+href="#troubleshooting">troubleshooting</a> describes some common
+problems, and there are also some notes on <a href="#updates">updates
+and support</a>.</p>
+<h2><a name="legal-issues">Legal Issues</a></h2>
+<h3><a name="disclaimer">Disclaimer</a></h3>
+<p>Permission is granted to make and distribute verbatim copies of
+this manual provided the copyright notice and this permission notice
+are preserved on all copies.</p>
+<h3><a name="copyright">Copyright</a></h3>
+<p><tt>Wget.rexx</tt>, this manual and the "Spinnankini" logo are Copyright
+&copy; 1998 by Thomas Aglassinger</p>
+<p>No program, document, data file or source code from this software
+package, neither in whole nor in part, may be included or used in
+other software packages unless it is authorized by a written
+permission from the author.</p>
+<h3><a name="no-warranty">No Warranty</a></h3>
+<p>There is no warranty for this software package. Although the author
+has tried to prevent errors, he can't guarantee that the software package
+described in this document is 100% reliable. You are therefore using this
+material at your own risk. The author cannot be made responsible for any
+damage which is caused by using this software package.</p>
+<h3><a name="distribution">Distribution</a></h3>
+<p>This software package is freely distributable. It may be put on any
+media which is used for the distribution of free software, like Public
+Domain disk collections, CDROMs, FTP servers or bulletin board
+systems.</p>
+<p>The author cannot be made responsible if this software package has
+become unusable due to modifications of the archive contents or of the
+archive file itself.</p>
+<p>There is no limit on the costs of the distribution, e.g. for the
+media, like floppy disks, streamer tapes or compact disks, or the
+process of duplicating.</p>
+<h3><a name="copyright-others">Other Material</a></h3>
+<p><tt>Wget</tt> is written by Hrvoje Niksic and is Copyright &copy; Free
+Software Foundation</p>
+<p><tt>Wget.rexx</tt> uses ReqTools, Copyright &copy; Nico Fran&ccedil;ois and Magnus
+Holmgren, RexxReqTools, Copyright &copy; Rafael D'Halleweyn and
+RexxDosSupport, Copyright &copy; Hartmut Goebel.</p>
+<p>For more details about these packages and where to obtain them from
+see below.</p>
+<h3><a name="copyright-sites">Copyright of Web Sites</a></h3>
+<p>Note that unless explicitly stated to the contrary, the copyright
+of all files on the WWW is held by the owners of the appropriate
+site.</p>
+<p>If you intend to redistribute <em>any</em> files downloaded from
+the WWW please ensure that you have the permission of the copyright
+holder to do so.</p>
+<h2><a name="requirements">Requirements</a></h2>
+<p>You will need a WWW-browser with a <strong>reasonable</strong> ARexx-port.
+<a href="http://www.amitrix.com/aweb.html">AWeb</a> and
+<a href="http://www.omnipresence.com/ibrowse/">IBrowse</a>
+meet this criteria. Voyager does not allow to query the URI currently
+browsing by means of ARexx.</p>
+<p>Of course you will need <tt>Wget</tt>. As it is distributed under the terms
+of the GNU General Public License, you can obtain its source code from
+<a href="ftp://prep.ai.mit.edu/pub">ftp://prep.ai.mit.edu/pub</a>.
+A compiled binary for AmigaOS is part of the Geek Gadgets and
+available from
+<a href="ftp://ftp.ninemoons.com/pub/geekgadgets/">ftp://ftp.ninemoons.com/pub/geekgadgets/</a>.
+You can also download the binary from
+<A HREF="http://wuarchive.wustl.edu/~aminet/dirs/aminet/dev/gg/wget-bin.lha">aminet:dev/gg/wget-bin.lha</A>.</p>
+<p>You need <tt>reqtools.library</tt>, <tt>rexxreqtools.library</tt>
+and <tt>rexxdossupport.library</tt> to be installed in your
+<tt>libs:</tt> drawer. They are not included with the WgetRexx
+archive, but you can obtain them from <A HREF="http://wuarchive.wustl.edu/~aminet/dirs/aminet/util/libs/ReqToolsUsr.lha">aminet:util/libs/ReqToolsUsr.lha</A> and <A HREF="http://wuarchive.wustl.edu/~aminet/dirs/aminet/util/rexx/rexxdossupport.lha">aminet:util/rexx/rexxdossupport.lha</A>.</p>
+<p>As these libraries are very common, they are maybe already
+installed on your system. Simply check your <a
+href="file://localhost/sys:libs/">sys:libs</a> drawer to validate
+this.</p>
+<h2><a name="installation">Installation</a></h2>
+<h3><a name="install-wget">Installing <tt>Wget</tt></a></h3>
+<p>The most difficult part of the installation by far is to make <tt>Wget</tt>
+work. As <tt>Wget</tt> is a tool coming from the Unix-world, it is completely
+unusable, has 873265 command line options and a very short manual with
+only a few examples.</p>
+<p>If you do not know how to install and use it, this script won't
+make it easier. It just makes it more efficient to invoke while
+browsing.</p>
+<p>Recursive web sucking is a very powerful feature. However, if used
+in an improper way, it can cause harm to the network traffic, and
+therefore should only be used by experienced people. Successfully
+installing <tt>Wget</tt> on an Amiga is one requirement to call yourself
+experienced.</p>
+<h3><a name="install-web">Creating Your Local Web</a></h3>
+<p>Before you can use this script, you have to decide where your local
+web should reside and create a directory for it. After that you have
+to create an assign named <tt>Web:</tt> to this directory.</p>
+<p>For example, if your local web should be in <tt>Work:Web</tt>,
+create a drawer called <tt>Web</tt> from the Workbench or enter</p>
+
+<pre>
+makedir Work:Web
+</pre>
+<p>into CLI. Then add the following line to your
+<tt>s:user-startup</tt>:</p>
+
+<pre>
+assign Web: Work:Web
+</pre>
+<h3><a name="install-wget.rexx">Installing <tt>Wget.rexx</tt></a></h3>
+<p>Now you can copy the script where ever you like. As it does not
+depend on a certain browser, it can make sense to store it in
+<tt>rexx:</tt>. This spares you to specify a full path when invoking
+<tt>rx</tt> as it will automatically look there for it.</p>
+<p>All you have to do now is to assign them to the ARexx macro menu by
+changing the preferences. See the <a
+href="#example-configuration">example configuration</a> for a few
+suggestions.</p>
+<h2><a name="first-steps">First Steps</a></h2>
+<p>Although the script will later on be started from your browser,
+you should first try if everything works. For that, open a
+CLI, and type:</p>
+
+<pre>
+cd ram:
+wget http://www.cucug.org/amiga.html
+</pre>
+<p>This should invoke <tt>Wget</tt> and download the title page of the
+popular Amiga Web Directory and store it in <tt>ram:amiga.html</tt>.</p>
+<p>If it does not, <tt>Wget</tt> does not work for you, and you can forget
+about the rest.</p>
+<p>Assuming you've been lucky, now try this:</p>
+
+<pre>
+wget -x http://www.cucug.org/amiga.html
+</pre>
+<p>This downloads the document again, but now also creates a directory
+for the server structure. Now you can find the copy in
+<tt>ram:www.cucug.org/amiga.html</tt>.</p>
+<p>And another step further:</p>
+
+<pre>
+wget -x --directory-prefix=/Web/ http://www.cucug.org/amiga.html
+</pre>
+<p>This time, the document ends up in <tt>Web:www.cucug.org/amiga.html</tt>,
+even if the current directory still is <tt>ram:</tt>.</p>
+<p>Now finally let's see what <tt>Wget.rexx</tt> can do for you. Start your browser,
+go to <tt>http://www.cucug.org/</tt> and wait until it displays the page.
+Switch to the CLI and enter:</p>
+
+<pre>
+rx wget.rexx
+</pre>
+<p>This downloads the document you are currently viewing in your
+browser to <tt>Web:</tt> and automatically displays the local copy
+after finishing. If everything worked fine, your browser should show
+<tt>file://localhost/Web:www.cucug.org/amiga.html</tt>.</p>
+<p>And all of this is done by communicating with the browser via ARexx
+and then invoking <tt>Wget</tt> the same was as you saw before.</p>
+<p>To be more specific, the script queries the URI your browser
+currently is displaying, tells <tt>Wget</tt> to download the stuff from there
+to your hard drive and put it into a reasonable place. Finally the
+browser is made to load the local copy.</p>
+<p>Also many possible errors are handled by the scripts before <tt>Wget</tt>
+is launched, and they usually result in a requester with a descriptive
+message. However, once <tt>Wget</tt> is started, you are to the mercy of its
+non-existent or esoteric error messages. The script can only warn
+about errors in general if <tt>Wget</tt> returned with a non-zero exit code
+(which it does not for all possible errors). In such a case, analyse
+the output in the console for problems.</p>
+<p>In this first few examples, only one file was downloaded.
+Fortunately, the underlying tool <tt>Wget</tt> can do more. With proper
+command line options, it can download several documents, scan them for
+links and images and continue downloading them recursively.</p>
+<p>The only catch about this is: you have to know how to work with
+<tt>Wget</tt>. There are some examples macros here and there are several
+interesting command line options mentions here, but this is not
+enough to really know what's going on. Nearly every site needs its
+own command line options to get the useful part - and prevent the
+useless stuff to be downloaded. Very often you will have to interrupt
+the process and resume with more proper options.</p>
+<p>There are some hints about this here, but: read the manual for
+<tt>Wget</tt>. There is no way around this.</p>
+<h2><a name="example-configuration">Example Configuration</a></h2>
+<p>Below you will find some example macros you can assign to the ARexx menu
+of your browser. As there are small differences between the various browsers,
+there exists a configuration for every one of them.</p>
+<p>It is recommended to use the clipboard to copy the macro texts into the
+preferences requester.</p>
+<p>Read also the about the <a href="#example-usage">usage of the
+example configuration</a> to find out how it works. For further
+information about passing arguments to the script, see <a
+href="#cli-options">command line options</a>.</p>
+<h3><a name="example-ibrowse">IBrowse</a></h3>
+<p>To make the script accessible from the Rexx menu, go to IBrowse's
+Preferences/General/Rexx and add the following entries:</p>
+<table border=1>
+<tr>
+<th>Name
+<th>Macro
+</tr>
+<tr>
+<td>Copy single resource
+<td>wget.rexx
+</tr>
+<tr>
+<td>Copy page with images
+<td>wget.rexx --recursive --level=1 --accept=png,jpg,jpeg,gif --convert-links
+</tr>
+<tr>
+<td>Copy site
+<td>wget.rexx --recursive --no-parent --reject=wav,au,aiff,aif --convert-links
+</tr>
+<tr>
+<td>Copy site...
+<td>wget.rexx Ask --recursive --no-parent --reject=wav,au,aiff,aif --convert-links
+</tr>
+<tr>
+<td>Copy generic...
+<td>wget.rexx Ask
+</tr>
+</table>
+<p>This assumes that the script has been installed to <tt>rexx:</tt>
+or the the browser directory. If this is not the case, you have to
+specify the full path name.</p>
+<p>To change the default console the script will send its output to,
+modify Preferences/General/General/Output Window.</p>
+<h3><a name="example-aweb">AWeb</a></h3>
+<p>To make the script accessible from the ARexx menu, go to AWeb's
+Settings/GUI&nbsp;Settings/ARexx and add the following entries:</p>
+<table border=1>
+<tr>
+<th>Name
+<th>Macro
+</tr>
+<tr>
+<td>Copy single resource
+<td>wget.rexx &gt;CON://640/200/Wget/CLOSE/WAIT
+</tr>
+<tr>
+<td>Copy page with images
+<td>wget.rexx &gt;CON://640/200/Wget/CLOSE/WAIT --recursive --level=1 --accept=png,jpg,jpeg,gif --convert-links
+</tr>
+<tr>
+<td>Copy site
+<td>wget.rexx &gt;CON://640/200/Wget/CLOSE/WAIT --recursive --no-parent --reject=wav,au,aiff,aif --convert-links
+</tr>
+<tr>
+<td>Copy site...
+<td>wget.rexx &gt;CON://640/200/Wget/CLOSE/WAIT Ask --recursive --no-parent --reject=wav,au,aiff,aif --convert-links
+</tr>
+<tr>
+<td>Copy generic...
+<td>wget.rexx &gt;CON://640/200/Wget/CLOSE/WAIT Ask
+</tr>
+</table>
+<p>This assumes that the script has been installed to <tt>rexx:</tt>
+or the the browser directory. If this is not the case, you have to
+specify the full path name.</p>
+<p>Note that you have to redirect the output of every script to a console.
+Otherwise you would not be able to see what <tt>Wget</tt> is currently doing. Therefor
+this looks a bit more confusing than the example for IBrowse.</p>
+<p>See also the <a href="#problems-aweb">problems with AWeb</a> for some
+further notes.</p>
+<h2><a name="example-usage">Usage of the Example Configuration</a></h2>
+<p>Here is a short description of the macros used for the example
+configuration.</p>
+<h3>Copy single resource</h3>
+<p>This is comparable to the download function of your browser. The
+difference is that it will automatically be placed in your local web
+in a directory depending on the location where it came from.</p>
+<p>For example, you could point your browser to
+<a href="http://www.cucug.org/aminew.html">http://www.cucug.org/aminew.html</a>
+and would get a single file named <tt>aminew.html</tt> being stored in
+the directory <tt>Web:www.cucug.org/</tt>. If such directory does not yet
+exist, it will be created automatically. This is the same as if you would
+have typed</p>
+
+<pre>
+wget -x --directory-prefix=/Web/ http://www.cucug.org/aminew.html
+</pre>
+<p>in the CLI. The difference is that you did not have to type a
+single letter.</p>
+<h3>Copy page with images</h3>
+<p>This now retrieves a page with all its images. Of course it only
+makes sense to call is when actually viewing a HTML-page. With other
+types of data like images it will act same as <i>Copy single
+resource</i>.</p>
+<p>After this operation, inline images will still work in the local
+copy of the downloaded page.</p>
+<h3>Copy site</h3>
+<p>This is a very powerful macro that will copy a whole site to your
+local web. It starts at the document currently viewing, and will
+download all pages, images and some other data within the same or a
+deeper directory level.</p>
+<p>The option <tt>--reject</tt> has been specified to refuse to
+download often unwanted music and sound data. You might want to
+specify further extensions here, so also movies, archives and
+printable documents are skipped, for example:
+<tt>--reject=mpg,mpeg,wav,au,aiff,aif,tgz,Z,gz,zip,lha,lzx,ps,pdf</tt>.
+<h3>Copy site...</h3>
+<p>Same as before, but because of the <tt>Ask</tt> it will pop-up a
+requester where you can change the options for <tt>Wget</tt> before it is
+actually invoked. For example, you can modify the <tt>--reject</tt>
+that it will not refuse sound data because you once in a while want to
+download from a music site.</p>
+<p>You can also add additional options like <tt>--no-clobber</tt> to
+continue an aborted <i>Copy site</i> from before or
+<tt>--exclude-directories</tt> because you known that there is only
+crap in <tt>/poetry/</tt>.</p>
+<h3>Copy generic...</h3>
+<p>This will simply pop-up a requester where you can enter options for
+Wget. Except for the internal <tt>-x --directory-prefix</tt> nothing
+is specified yet. It is useful when occasionally none of the above
+methods is flexible enough.</p>
+<h2><a name="cli-options">Command Line Options</a></h2>
+<p>As you just learned, it is possible to pass additional options to <tt>Wget.rexx</tt>.
+There are two different kinds of them:</p>
+<ul>
+<li>Options handled by the script to influence its behavior. They are
+described here.
+<li>Options for <tt>Wget</tt> to tell what to download how. These are covered
+in the documentation included with <tt>Wget</tt>.
+</ul>
+<p>The complete <tt>ReadArgs()</tt> template for <tt>Wget.rexx</tt> is:</p>
+
+<pre>
+To/K,Ask/S,Further/S,Port/K,Continue/S,Clip/K,Verbose/S,Screen/K,Options/F
+</pre>
+<p>In most cases you will not need to specify any options except those
+for <tt>Wget</tt>.</p>
+<h3><a name="option-details">Get Some Details</a></h3>
+<p>If you enable <tt>Verbose</tt>, <tt>Wget.rexx</tt> will tell you some
+details what is going on:</p>
+<ul>
+<li>The version number of the program
+<li>The name of the ARexx port it is talking to
+<li>From where it is going to download
+<li>Where the file to be shown after a successful download
+will be located
+</ul>
+<p>Note that this does not influence the output of <tt>Wget</tt> itself.</p>
+<h3><a name="option-ask">Ask for Options</a></h3>
+<p>One might not always be satisfied with a few standard macros and
+would like to pass different options to <tt>Wget</tt>. On the other hand it
+does not make sense to clutter the ARexx menu of your browser with
+loads of only slightly different macros. Invoking the script
+like</p>
+
+<pre>
+wget.rexx Ask
+</pre>
+<p>will pop-up a requester where you can enter options to be passed
+to <tt>Wget</tt>. If you already passed other <tt>Wget</tt> options via command
+line, the requester will allow you to edit them before starting
+<tt>Wget</tt>:</p>
+
+<pre>
+wget.rexx Ask --recursive --no-parent
+</pre>
+<p>will bring a requester where the text "<tt>--recursive
+--no-parent</tt>" is already available in the input field and can be
+extended or reduced by the user. Sometimes it may be more convenient
+to use</p>
+
+<pre>
+wget.rexx Ask Further --recursive --no-parent
+</pre>
+<p>This also brings up the requester, but this time the input field is
+empty. The options already specified in the command line will be
+passed in any case, and you can only enter additional options. If for
+example you now enter <tt>--reject=mpeg</tt> this would be the same as
+if you would have called</p>
+
+<pre>
+wget.rexx --recursive --no-parent --reject=mpeg
+</pre>
+<p>The main advantage is that the input field is not already cluttered
+with loads of confusing options. The drawback is that you can not edit
+or remove options already passed from the command line.</p>
+<h3><a name="option-screen">Messing with Screens</a></h3>
+<p>If the browser runs on an own screen, it is possible that the
+<tt>Ask</tt> requester will still pop-up on the Workbench. You can
+avoid this by passing the name of the screen manually, for
+example:</p>
+
+<pre>
+wget.rexx Ask Screen="IBrowse Screen"
+</pre>
+<p>(This is a misfeature resulting from the fact that RexxReqTools
+cannot figure the screen of the console started from the browser
+because the task's <tt>pr_WindowPtr()</tt> seems to get lost
+somewhere. Normally, the requester would open on the browser screen
+automatically.)</p>
+<p>However, <tt>Screen</tt> only affects the requester. If you want
+to redirect the console where <tt>Wget</tt> prints its progress
+information, you have to do so by giving a screen in the console
+specification. For example,
+
+<pre>
+"CON://500/200/Wget/CLOSE/WAIT/SCREENIBrowse Screen"
+</pre>
+<p>Generally, you can specify the frontmost screen with
+"<tt>*</tt>". Usually, this is what you want if you start
+<tt>Wget.rexx</tt> from the browser:
+
+<pre>
+CON://500/200/Wget/CLOSE/WAIT/SCREEN*
+</pre>
+<p>If you want to use blanks in the window title, you have quote
+the console specification. This rises a little problem, because
+"<tt>*</tt>" is the CLI escape character. To actaully get a
+"<tt>*</tt>", you have to use "<tt>**</tt>" (Read the AmigaDOS
+manual for more details on this possibly confusing issue):</p>
+
+<pre>
+"CON://500/200/Wget Output/CLOSE/WAIT/SCREEN**"
+</pre>
+<p>Thus, an example macro for your browser might look like:</p>
+<table border=1>
+<tr>
+<th>Name
+<th>Macro
+</tr>
+<tr>
+<td>Copy site..
+<td>wget.rexx Ask Screen="IBrowse Screen" --recursive --no-parent &gt;"CON://500/200/Wget/CLOSE/WAIT/SCREEN**"
+</tr>
+</table>
+<h3><a name="option-wget">Specify Options for <tt>Wget</tt></a></h3>
+<p>The last part of the command line can contain additional options to
+be passed to <tt>Wget</tt>.</p>
+<p><strong>Important</strong>: You must not pass any <tt>Wget.rexx</tt>
+specific options after the first option for <tt>Wget</tt>. For example,</p>
+
+<pre>
+wget.rexx Ask --quiet
+</pre>
+<p>tells <tt>Wget.rexx</tt> to pop-up the options requester and <tt>Wget</tt> to not
+display download information. But on the other hand,</p>
+
+<pre>
+wget.rexx --quiet Ask
+</pre>
+<p>will pass both <tt>--quiet Ask</tt> to <tt>Wget</tt>, which of course does
+not really know what to do about the <tt>Ask</tt>.</p>
+<h3><a name="option-directory">Specify a Different Download Directory</a></h3>
+<p>If you do not want the downloaded data to end up in
+<tt>Web:</tt>, you can use <tt>To</tt> to specify a different
+download directory. For example:</p>
+
+<pre>
+wget.rexx To=ram:t
+</pre>
+<p>The value denotes a path in AmigaOS format. Internally it will be
+converted to the ixemul-style before it is passed to <tt>Wget</tt>. Fortunately
+you do not have to know anything about that.</p>
+<p>With a little CLI magic, you can let a file requester ask you for
+the download directory:</p>
+
+<pre>
+wget.rexx To=`RequestFile DrawersOnly SaveMode NoIcons Title="Select Download Directory"`
+</pre>
+<p>Note that the quote after <tt>To=</tt> is a back-quote, not a
+single quote. You can find it below <kbd>Esc</kbd> on your
+keyboard.</p>
+<h3><a name="option-port">Select the Browser ARexx Port</a></h3>
+<p>Normally you do not want to do this because <tt>Wget.rexx</tt> figures out
+the ARexx port to use by itself.</p>
+<p>First it assumes that the host it was started from was a browser.
+In such a case, it will continue to talk to this host no matter how
+many other browsers are running at the same time.</p>
+<p>If this turns out to be wrong (e.g. because it was started in the
+CLI), it tries to find one of the supported browsers at its default
+port. If any such browser is running, it will use this.</p>
+<p>If no browser is running, the script does not work at all for
+apparent reasons.</p>
+<p>The only possible problem can be that several supported browsers
+are running at the same time, and you do not start the script directly
+from one of them. In such a rare case the browser checked first will
+be used, which is not necessarily the one the user prefers. Therefore
+you can use</p>
+
+<pre>
+wget.rexx Port=IBROWSE
+</pre>
+<p>in CLI, even if AWeb is also running.</p>
+<h3><a name="option-continue">Continue an Interrupted Download</a></h3>
+<p>Especially when copying whole sites, it often happens that <tt>Wget</tt>
+ends up downloading stuff that you do not want. The usual procedure
+then is to interrupt <tt>Wget</tt>, specify some additional options to reject
+some stuff and restart again. For example, you found some site and
+started to download it:</p>
+
+<pre>
+wget --recursive --no-parent http://www.interesting.site/~stuff/
+</pre>
+<p>But soon you notice that there are loads of redundant PDF documents
+which only reproduce the information you are just obtaining in HTML.
+Therefor you interrupt and start again with more options:</p>
+
+<pre>
+wget --recursive --no-parent --no-clobber --reject=pdf http://www.interesting.site/stuff/
+</pre>
+<p>To your further annoyance it turns out that the directory
+<tt>/stuff/crap</tt> entirely hold things you are not interested in. So
+therefor you restart again:</p>
+
+<pre>
+wget --recursive --no-parent --no-clobber --reject=pdf --exclude-directories=/stuff/crap/ http://www.interesting.site/stuff/
+</pre>
+<p>And so on. As you can see, it can take quite some effort before you
+find proper options for a certain site.</p>
+<p>So how can the above procedure be performed with <tt>Wget.rexx</tt>? Apparently,
+there is no history function like in the CLI, where you can switch back
+to the previous call and add additional options to it.</p>
+<p>However, you can make <tt>Wget.rexx</tt> to store the options entered in
+the requester when <tt>Ask</tt> was specified in a ARexx-Clip. This
+will be preserved and can be read again and used as default value in
+the requester. To achieve that, enable <tt>Continue</tt>.
+<p>Now that sounds confusing, but let's see how it works in practice, using
+an extended version of the <i>Copy site...</i> macro from before:</p>
+<table border=1>
+<tr>
+<th>Name
+<th>Macro
+</tr>
+<tr>
+<td>Copy site..
+<td>wget.rexx Clip=wget-site Ask Further --recursive --no-parent
+</tr>
+<tr>
+<td>Continue copy site...
+<td>wget.rexx Clip=wget-site Ask Further Continue --recursive --no-parent --no-clobber
+</tr>
+<tr>
+</table>
+<p>The macro <i>Copy site...</i> will always pop up an empty
+requester, where you can specify additional options like
+<tt>--reject</tt>. The options you enter there will be stored in an
+ARexx clip called "wget-site". It does not really matter how you call
+this clip, the only important thing is that you use the same name for
+the macro that reads the clip.</p>
+<p>And this is exactly what <i>Continue copy site...</i> does: because of
+<tt>Continue</tt> it does not clear the clip. Instead, the clip is only
+read and its value used as default text in the string requester. The
+additional parameter <tt>--no-clobber</tt> just tells <tt>Wget</tt> not to
+download again the files you already got.</p>
+<p>So how does the above example session look with <tt>Wget.rexx</tt>?</p>
+<p>First, you browse to http://www.interesting.site/stuff/ and select
+<i>Copy site</i>. Soon you have to interrupt it, select <i>Copy site...</i>
+and enter <tt>--reject=pdf</tt> into the upcoming requester. Until now,
+there is nothing you could not have already done with the old macros.</p>
+<p>But when it turns out that the <tt>--reject</tt> was not enough,
+you only have to select <i>Continue copy site...</i>, and the
+<tt>--reject=pdf</tt> is already available in the requester. You just
+have to extend the text to <tt>--reject=pdf
+--exclude-directories=/stuff/crap/</tt> and can go on.</p>
+<p>And if later on some MPEG animations show up, you should know what
+to do by reselecting <i>Continue copy site...</i> again...</p>
+<h3><a name="option-uri">Specify a URI</a></h3>
+<p>You can also specify a URI for <tt>Wget</tt> when invoking the script. In
+this case, the document currently viewed in the browser will be
+ignored.</p>
+<p>Specifying more than one URI or a protocol different to
+<tt>http://</tt> will result in an error message. This is a difference
+to <tt>Wget</tt>, which allows multiple URIs and also supports
+<tt>ftp://</tt>.</p>
+<p>URIs have to be specified in there full form, which means you for
+example can not use <tt>www.cucug.org</tt>. Instead, the complete
+<tt>http://www.cucug.org/</tt> is required.</p>
+<p>Among other things, this can be useful for creating a macro to
+update a local copy of an earlier downloaded site. For example with
+IBrowse you could use:</p>
+<table border=1>
+<tr>
+<th>Name
+<th>Macro
+</tr>
+<tr>
+<td>Update biscuits
+<td>wget.rexx --timestamping --recursive --no-parent --exclude-directories=/~hmhb/fallnet http://www.btinternet.com/~hmhb/hmhb.htm
+</tr>
+</table>
+<p>This basically acts like if <a
+href="http://www.btinternet.com/~hmhb/hmhb.htm">http://www.btinternet.com/~hmhb/hmhb.htm</a> would have been viewed in the browser, and you
+would have selected <i>Copy site</i>. Because of
+<tt>--timestamping</tt>, only new data are actually copied. Because of
+the <tt>--exclude-directories=/~hmhb/fallnet</tt> some stuff that was
+considered to be unwanted at a former download is skipped.
+<p>Putting this into the macro menu spares you to remember which
+options you used two months ago.</p>
+<h2><a name="outsourcing">Outsourcing Macros</a></h2>
+<p>If you have many macros like <i>Update biscuits</i> from before, it
+does not make sense any more to put them into the macro menu of the
+browser. Such macros are not called very often and mostly serve the
+purpose of "remembering" options you used to copy a site.</p>
+<p>Fortunately there are many different places where you can put such
+macros.</p>
+<p>A straight forward approach would be to put them in shell scripts.
+For example, <tt>s:wget-biscuits</tt> could hold the following
+line:</p>
+
+<pre>
+rx wget.rexx --timestamping --recursive --no-parent --exclude-directories=/~hmhb/fallnet http://www.btinternet.com/~hmhb/hmhb.htm
+</pre>
+<p>If you set the script protection bit by means of</p>
+
+<pre>
+protect s:wget-biscuits ADD s
+</pre>
+<p>you can simply open a CLI and type</p>
+
+<pre>
+wget-biscuits
+</pre>
+<p>to invoke the macro.</p>
+<p>But this merely is useful to outline the idea. Who wants to deal
+with CLI, if it can be avoided? If you have some experience, you can
+easily store such a call in a button for DirectoryOpus or ToolManager
+(available from <A HREF="http://wuarchive.wustl.edu/~aminet/dirs/aminet/util/wb">util/wb/ToolManager#?.lha</A>. That way, you can even create dock
+hierarchies and sub-menus for your download macros. Refer to the
+manuals of these applications for more details.</p>
+<h2><a name="indexing">Generating an Index for Web:</a></h2>
+<p>If you often download web sites, you will find it inconvenient to
+clutter your bookmarks. After all, many of them will only be for
+reference purpose, and not be visited regularly.</p>
+<p>The included rexx script <tt>make_web_index.rexx</tt> allows a
+different approach: it scans all directories in <tt>Web:</tt> and
+creates a document in <tt>Web:index.html</tt> that links all these
+directories. Probably you want to include this particular document in
+your bookmarks or hot-link buttons.</p>
+<p>One problem with this is that sometimes the name of the
+directory/site doesn't tell much about its contents. In that case,
+you can add a comment to the directory. From the Workbench, select
+the directory, choose "Icons/Information..." and enter whatever
+you find appropriate in the "Comment" field. In CLI, use the <tt>FileNote</tt>
+command, for example:</p>
+
+<pre>
+filenote web:www.westnet.com Weddoes
+</pre>
+<p>The script automatically scans all directory levels for documents
+suitable as welcome page (usually named <tt>index.html</tt>,
+<tt>welcome.html</tt> or something similar). Consequently, if it can't
+find a <tt>www.westnet.com/index.html</tt>, but a directory
+<tt>web:www.westnet.com/weddoes</tt>, it will continue there. If it
+cannot find any welcome document, it will pick the first HTML
+document.</p>
+<p>In most cases this is what you want. If not, you can manually
+specify which document to choose as welcome page in a file named
+<tt>welcome.web</tt>. For example, start your favourite editor
+like</p>
+
+<pre>
+ed web:www.westnet.com/welcome.web
+</pre>
+<p>and enter the single line</p>
+
+<pre>
+weddoes/faq.html
+</pre>
+<p>Start the script, open <tt>Web:index.html</tt> in your browser,
+click on <tt>www.westnet.com</tt> and - voil&agrave;! - you can see the FAQ
+instead of the welcome page.</p>
+<p>The same procedure applies if the script cannot find a suitable
+welcome page, e.g. because you downloaded only a single image from a
+site. In that case, just specify the location of the image in
+<tt>welcome.web</tt>.</p>
+<h2><a name="troubleshooting">Troubleshooting</a></h2>
+<p>Here are some common problems and some hints how to solve them or
+where to get further information from.</p>
+<h3><a name="problems-wget.rexx">Problems with <tt>Wget.rexx</tt></a></h3>
+<p><b>The browser displays the local copy as plain text. I can actually see the HTML code (yuk)!</b></p>
+<p>This happens when the downloaded file is a HTML document, but
+doesn't have a filename suffix recognized by the browser.</p>
+<p>Probably you downloaded some dynamic web page ending
+<tt>.cgi</tt>, <tt>.asp</tt>, <tt>cfm</tt>, <tt>.php</tt>, or
+something similar meaningless. Probably the whole URI looks weird
+and contains heaps of ampersands (&amp;).</p>
+<p>The reason why a page ending e.g. in <tt>.cfm</tt> can look good
+on the web, but turns to ugly HTML code in the local copy is that
+on the web, the web server sending the document told the browser
+"This is actually a HTML document, despite ending in
+<tt>.php</tt>". But, when the browser just loads it from the disk,
+nobody tells it what it is.</p>
+<p>Fortunately, there is a solution: <em>you</em> can tell the
+browser by specifying the suffix as HTML document in the MIME
+settings. Your browser should have a menu like "Settings/MIME" or
+"Settings/External&nbsp;viewer". Probably, there already is an
+entry for "html htm shtml". Just add the suffix of the current
+document to this list. When you try to reload it, the browser
+should now recognize it as HTML document, and display it
+accordingly.</p>
+<p><b>My browser is not supported!</b></p>
+<p>Supporting new browsers should be easy, assuming that its ARexx
+port is powerful enough. In detail, the following data are needed:</p>
+<ul>
+<li>Name of default ARexx port,
+<li>ARexx command to retrieve the name of the URI currently viewing
+<li>ARexx command to load a new URI
+</ul>
+<p>You should be able to find this information in the manual of your
+browser. If you submit it to <a href="#updates">me</a> your browser
+will probably be supported within the next update of WgetRexx.</p>
+<p><b><tt>Wget.rexx</tt> does not find <tt>Wget</tt>, although it is in the Workbench search path!</b></p>
+<p>This problem can occur if you started your browser from ToolManager or
+similar utilities. The original search path is not passed to the browser.
+There are several ways to work around this:</p>
+<ul>
+<li>Sometimes the tool which starts the browser allows to specify the
+search path manually. This has the least impact on your system
+stability.
+<li>The easiest solution is to copy <tt>Wget</tt> to <tt>c:</tt>, which is
+<em>always</em> in the search path. This is not very elegant, but even
+works if the first suggestion is not applicable.
+<li>The most hackish approach is to change the line
+<tt>wget_command&nbsp;=&nbsp;'...'</tt> at the beginning of the
+script. If you don't care about elegance and future update problems,
+but need an ego rush and want to prove to your friends how mighty
+you are, this is the way to go.
+</ul>
+<p><b>When interrupting <tt>Wget.rexx</tt> by pressing Control-C, my browser quits!</b></p>
+<p>Sad but true. Contact your technical support and try to convince
+them that this sucks.</p>
+<p><b>The macro <i>Copy page with pictures</i> does not seem to work
+with frames!</b></p>
+<p>Of course not, because the technical implementation of the whole
+frame concept sucks.</p>
+<p>As a workaround, you can view every frame in its own window and
+apply the macro to it. At the end, you will have all frames the
+pages is consisting of and can finally also copy the frame page
+itself.</p>
+<p><b>Now what is case-sensitive and what is not?</b></p>
+<p>WgetRexx uses several different mechanisms, and unfortunately
+they differ concerning case-sensitivity:</p>
+<ul>
+<li>Names of ARexx ports are case sensitive (like <tt>IBROWSE</tt>). Usually they are all-uppercase.
+<li>Names of ARexx clips are case sensitive (passed as value to the <tt>Clip</tt> option)
+<li>CLI options for <tt>Wget.rexx</tt> are case insensitive (like <tt>Ask</tt>), but
+its values not necessarily (like for <tt>Port</tt>, where the value specifies an
+ARexx port).
+<li>CLI options for <tt>Wget</tt> are case sensitive (like <tt>--recursive</tt>).
+</ul>
+<p>For URI values, it becomes even more confusing, as it depend on the
+server. Nevertheless filenames are case insensitive as soon as they are
+on your hard drive.</p>
+<h3><a name="problems-wget">Problems with <tt>Wget</tt></a></h3>
+<p><b>I can't make <tt>Wget</tt> work at all, not even from the command line!</b></p>
+<p>Bad luck. Not my problem.</p>
+<p><b><tt>Wget</tt> basically works, but I don't know how to ... with it.</b></p>
+<p>Refer to the <tt>Wget</tt> manual for that. There is a command line option
+for nearly everything, so usually you only have to search long
+enough.</p>
+<p><b><tt>Wget</tt> starts and connects as intended, but when it comes to writing
+the downloaded data to disk, it fails!</b>
+<p>Due to problems in <tt>ixemul.library</tt> <tt>Wget</tt> can not write to
+partitions handled by XFH or similar compressing file systems. Use a
+directory on a normal partition as destination.</p>
+<p><b><tt>Wget</tt> works nice, but it also download loads of bullshit I don't want to
+have on my hard drive!</b></p>
+<p>There are several command line options to prevent <tt>Wget</tt> from downloading
+certain data, with the most important ones being:
+<ul>
+<li><tt>--reject</tt> and <tt>--accept</tt> resp. <tt>-R</tt> and <tt>-A</tt>
+<li><tt>--exclude-directories</tt> resp. <tt>-X</tt>
+<li><tt>--exclude-domains</tt>
+</ul>
+<p>Refer to the manual how to use them and pass them to the requester of
+<tt>Copy Site...</tt> macro.</p>
+<p><b><tt>Wget</tt> downloads a site, but the links on my hard disk still all
+refer to the original in the WWW!</b></p>
+<p>There are two possible reasons for such problems:</p>
+<ul>
+<li>The web author has decided to use global links (which always have the
+full <tt>http://</tt> stuff) instead of relative links which only
+specify the filename. See <tt>--convert-links</tt> to find out what
+to do about that.
+<li>The web author has decided to use the <tt>base</tt> tag, which
+specifies a kind-of prefix being applied to all local URIs. In practice,
+this means that all local URIs automatically expand to a global one
+pointing to the original site in the web. Unfortunately, <tt>Wget</tt>
+does not offer any options to convert such sites.
+</ul>
+<p><b><tt>Wget</tt> refuses to download everything from a site!</b></p>
+<p>First you should check, if the options you passed to <tt>Wget</tt> don't
+make it to reject some stuff you possibly want to have. For example,
+with <tt>--no-parent</tt> "global" images like logos accessed by
+several sites on the same server are ignored. However, not
+specifying <tt>--no-parent</tt> when copying sites usually lets you
+end up in the deep mud of ways to reject directories, domains and
+file patterns so that it is usually not worth the trouble.</p>
+<p>If more missing than just a couple of images, this can have
+several other reasons:</p>
+<ul>
+<li>The web author was a complete idiot, wrote some severely corrupted HTML code,
+never validated it and thinks everything is ok just because his favourite
+browser can display it.
+<li>The web author was a complete idiot and does not use normal HTML links
+for navigation but for example JavaScript. (Of course pages using
+JavaScript only for some stupid effects are no problem, except for the
+annoyance.)
+<li>The web author was a complete idiot and thinks you need a certain browser
+to download his site.
+<li>The web author was a complete idiot and did something else very stupid
+not mentioned here.
+<li>The web author decided that he does not want you to download his site
+and has specified so in his <tt>robots.txt</tt>. You can detect such a
+case by seeing that <tt>Wget</tt> finished immediately after downloading
+<tt>robots.txt</tt>. Look at the manual to learn more about <tt>robots.txt</tt>,
+and how <tt>Wget</tt> deals with it. But usually people have good reasons preventing
+you from downloading certain data.
+<li>The recursion level of <tt>Wget</tt> was not high enough. This is very rare, as
+the internal default is usually enough. See <tt>--level</tt> to learn more
+about that.
+</ul>
+<p>In most cases you can assume that the web author was a complete
+idiot. As a matter of fact, most of them are. Unfortunately, there is
+not much you can do about that.</p>
+<p><b><tt>Wget</tt> always requests me to "insert volume usr: in any drive"!</b></p>
+<p>As <tt>Wget</tt> comes from the Unix-world, the AmigaOS binary uses the
+<tt>ixemul.library</tt>. It expects a Unix-like directory tree, and
+looks for an optional configuration file in
+<tt>usr:etc/.wgetrc</tt>.</p>
+<p>It won't hurt if you assign <tt>usr:</tt> to wherever (e.g.
+<tt>t:</tt>) and do not provide this configuration file at all, as
+internal defaults will then be used. If you have an AssignWedge-alike
+installed, you can also deny this assign without facing any negatives
+consequences for <tt>Wget</tt>.</p>
+<p>However, you should remember that other Unix ports you might
+install in future could require <tt>usr:</tt> to point to some
+reasonable location. For example, when installing Geek Gadgets, it adds
+its own assign for <tt>usr:</tt> to your <tt>s:user-startup</tt>, and
+you should not overwrite this later on.</p>
+<h3><a name="problems-aweb">Problems with AWeb</a></h3>
+<p><b>AWeb does not allow me to modify the ARexx menu!</b></p>
+<p>The full version does.</p>
+<p><b>AWeb does not allow me to enter such long macros as <i>Copy site with pictures</i>!</b></p>
+<p>It seems that at least for AWeb 3.1, the maximum length of the
+input fields has an unreasonable small value. (CLI accepts commands
+upto 512 characters).</p>
+<p>This problem has been reported to the technical support and might
+be fixed in a future version. Until then, you can use the following
+workaround:</p>
+<p>Do not enter the macro text in the settings requester, but
+instead, write it to a script file and store for example in
+<tt>s:wget-page-with-images</tt>. This script would consist of only
+a single line saying:</p>
+
+<pre>
+wget.rexx --recursive --level=1 --accept=png,jpg,jpeg,gif --convert-links
+</pre>
+<p>In the macro menu, you now only add:</p>
+<table border=1>
+<tr>
+<th>Name
+<th>Macro
+</tr>
+<tr>
+<td>Copy page with images
+<td>s:wget-page-with-images &gt;CON://640/200/Wget/CLOSE/WAIT
+</tr>
+</table>
+<p>Again, this is only a workaround and not the way the things should
+be.</p>
+<h2><a name="updates">Updates and Support</a></h2>
+<p><b>New versions</b> of WgetRexx will be uploaded to <A HREF="http://wuarchive.wustl.edu/~aminet/dirs/aminet/comm/www/WgetRexx.lha">aminet:comm/www/WgetRexx.lha</A>. Optionally you can also obtain them
+from the WgetRexx Support Page at <a
+href="http://www.giga.or.at/~agi/wgetrexx/">http://www.giga.or.at/~agi/wgetrexx/</a>.</p>
+<p>If you found a bug or something does not work as described, you can
+reach the <b>author</b> via e-mail at this address: Thomas Aglassinger
+&lt;agi@sbox.tu-graz.ac.at&gt;.</p>
+<p>But before you contact me, look if your problem has not already
+been covered in the chapter about <a
+href="#troubleshooting">troubleshooting</a>.</p>
+<p>When reporting problems, please <b>include the name of the WWW
+browser and version number of <tt>Wget.rexx</tt></b> you are using. You can
+find this out by taking a look at the source code or by typing
+<tt>version wget.rexx</tt> into CLI.</p>
+<p>And please <b>don't bother me with problems like to how to use a
+certain command line option of <tt>Wget</tt> to achieve a certain result on a
+certain site</b>. This program has its own manual.</p>
+<h2><a name="history">History</a></h2>
+<h3>Version 2.4, 20-Jun-2000</h3>
+<ul>
+<li>Fixed bug: URI's containing a tilde (~) caused endless loop.
+</ul>
+<h3>Version 2.3, 18-Jun-2000</h3>
+<ul>
+<li>Fixed bug: The URI to download is now quoted before passed to wget
+via CLI. This should remove trouble with dynamic web pages generated
+by CGI scripts or stuff like PHP. Without techno-fuzz: this should
+remove problems with forms, web-based discussion groups, or more
+general: URIs that contain heaps of ampersands (&amp;). Probably you
+have to extend you MIME settings with these suffixes, otherwise you
+might only <a href="#problems-wget.rexx">see the actual HTML code</a>
+in the browser.
+<li>Included script to automatically <a href="#indexing">generate an
+index for <tt>Web:</tt></a>.
+</ul>
+<h3>Version 2.2, 10-Nov-1999</h3>
+<ul>
+<li>Fixed bug (again): Pressing "Cancel" in the <tt>Ask</tt> requester
+still did not abort the script. The problem seemed to be with
+RexxReqTools, which didn't set my custom result variable
+<tt>ok</tt>. The manual of RexxReqTools is a bit unclear in that
+one, but you have to specify the result variable name as a
+string(<tt>"ok"</tt> instead of just <tt>ok</tt>. Anyway, now the
+script uses the internal default variable <tt>rtresult</tt>.
+<li>Fixed a bug in the "First Steps" section of the manual (used <tt>--prefix-directory</tt> instead of <tt>--directory-prefix</tt>)
+<li>Added CLI option <a href="#option-screen"><tt>Screen</tt></a> to allow
+redirecting the <tt>Ask</tt> requester to the browser screen.
+<li>Added a couple of new questions and hints to the
+<a href="#troubleshooting">troubleshooting</a> section, mostly addressing
+problems people have reported since the previous release.
+<li>Added possibility to change some of the more obscure internal variables of
+the script at the beginning. Nevertheless, usually there should not be any
+need to do so.
+<li>Slightly reworded some of the error messages.
+</ul>
+<h3>Version 2.1, 13-May-1998</h3>
+<ul>
+<li>Added support to automatically convert URIs beginning with
+<tt>file://localhost/Web:</tt> to one with <tt>http://</tt> if
+the script is activated while browsing in your local <tt>Web:</tt>.
+<li>Added <tt>--convert-links</tt> to the <i>Copy site</i> macros.
+<li>Changed title of requesters from "Wget Request" to "Wget.rexx Request".
+<li>Fixed bug: Pressing "Cancel" in the requester for <tt>Wget</tt> options did
+not abort the script (resulting from an unexpected behavior of
+<tt>rexxreqtools.library</tt> which seems to set the <tt>resultname</tt>
+of <tt>rtGetString()</tt> only if "Ok" is selected.)
+<li>Fixed bug: When opening libraries failed, the script viewed an
+error message (as it is supposed to), but did not exit afterwards.
+The result was a run time error when accessing a library function
+later.
+<li>Fixed bug: with <tt>Verbose</tt>, download information was viewed twice.
+<li>Cleaned up code a little.
+</ul>
+<h3>Version 2.0, 8-May-1998</h3>
+<ul>
+<li>Added support for non-wget specific CLI options. As this is done via
+<tt>ReadArgs()</tt> of <tt>rexxdossupport.library</tt>, this library is
+now also required.
+<li>Added several <a href="#cli-options">CLI options</a>.
+<li>Added more details how to <a href="#example-aweb">use it with AWeb</a>,
+especially how to get <tt>Wget</tt> to output to a console window.
+<li>Added handler to catch Control-C and make a somewhat more pleasant
+output then the standard ARexx handler. (This however does not
+fix the "browser quits on Control-C" problem)
+<li>Added handler to catch uninitialized variables.
+<li>Changed the default output of the script so that only the command
+call to <tt>Wget</tt> is viewed. Use <tt>Verbose</tt> for more details.
+<li>Changed from one script for every browser to a single script that
+figures out the browser by itself.
+<li>Changed installation notes and recommended to store the script in
+<tt>rexx:</tt> instead of the browser directory.
+<li>Changed the script <tt>wget-ask.#?</tt> to CLI option <tt>Ask</tt>.
+<li>Fixed a couple of minor bugs concerning uninitialized variables and
+a missing <tt>CALL</tt> statement.
+<li>Fixed some quirks in the manual.
+<li>Clarified that <tt>rexxreqtools.library</tt> is already included in
+<tt>ReqToolsUsr.lha</tt> and there is no need to download the
+separate archive.
+</ul>
+<h3>Version 1.1, 30-Apr-1998</h3>
+<ul>
+<li>First public release.
+</ul>
+<h3>Version 1.0, 23-Mar-1998</h3>
+<ul>
+<li>Initial internal release.
+</ul>
+<hr>
+<i>TODO: Link to Impressum, DSVGO</i>
+</body></html>

@@ -1,0 +1,40 @@
+_model: page
+---
+title: WgetRexx - Invoke Wget from Your Amiga Browser
+---
+body:
+
+This is the support page for WgetRexx, **version 2.4** (20-Jun-2000).
+
+WgetRexx is an ARexx script to invoke Wget from your favourite Amiga WWW browser.
+It is designed in a way that you can easily maintain a copy of the interesting parts
+of the WWW on your local hard drive.
+
+![Spinnakinni Logo](wgetrexx.png)
+
+WgetRexx is &copy; Thomas Aglassinger 1998-2000 and is copyrighted freeware. 
+Therefor you are allowed to use it without paying and can also modify it to fit
+your own needs. You can redistribute it as long as the whole archive and its 
+contents remain unchanged.
+
+- Read the [README](README.txt) for a short overview
+- Read the [manual](Manual.html) for details
+- Read the [history](Manual.html#history) to learn
+  about differences to older versions
+- View [wget.rexx](wget.rexx) to see the script itself
+- Download [aminet:comm/www/WgetRexx.lha](https://aminet.net/comm/www/WgetRexx.lha), version 2.4
+- Download [WgetRexx.lha](WgetRexx.lha) from local copy
+
+Some additional required or maybe interesting material can be
+downloaded below. Read the [legal issues](Manual.html#legal-issues)
+in the manual for further details on these packages.
+
+- Download [aminet:util/libs/ReqToolsUsr.lha](https://aminet.net/search?query=ReqToolsUsr)
+- Download [aminet:util/rexx/rexxdossupport.lha](https://aminet.net/search?query=rexxdossupport)
+- Download [aminet:dev/gg/wget-*bin.lha](https://aminet.net/search?query=wget+bin). If the most current version does not work, try version 1.4.2.
+- Download [aminet:util/libs/ixemul*.lha](https://aminet.net/search?name=ixemul&path[]=util/libs) and download the most current ixemul.library.
+
+German-speaking users might be interested in a Wget Workshop in the
+Austrian online magazine [AmigaScene](https://aminet.net/search?name=ascene&path[]=mags/german), for which this
+script initially has been written. It is spread in 3 parts that can be found
+in `ascene03.lha`, `ascene04.lha` and `ascene05.lha`. 

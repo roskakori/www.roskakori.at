@@ -9,7 +9,6 @@ intro:
 At the Grazer Linuxtage 2018 I gave a talk about using Python instead of
 shell scripts, especially when it comes to complex shell scripts that quickly
 become fragile and difficult to maintain.
-
 ---
 body:
 
@@ -62,13 +61,15 @@ expressions and the `open()` function. Here's a small python function that
 mimics the basic functionality of grep:
 
 ```python
-    def grep(pattern, path, encoding='utf-8'):
-        regex = re.compile(pattern)
+import re
 
-        with open(path, encoding=encoding) as file_to_grep:
-            for line in file_to_grep:
-                if regex.search(line):
-                    yield line.rstrip('\n')  # Return line by line as iterator
+def grep(pattern, path, encoding='utf-8'):
+    regex = re.compile(pattern)
+
+    with open(path, encoding=encoding) as file_to_grep:
+        for line in file_to_grep:
+            if regex.search(line):
+                yield line.rstrip('\n')  # Return line by line as iterator
 ```
 
 The `glob()` function in the `glob` module can find files matching a shell

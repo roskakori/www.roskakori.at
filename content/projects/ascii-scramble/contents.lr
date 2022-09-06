@@ -1,0 +1,29 @@
+_model: page
+---
+title: ASCII-Scramble
+---
+body:
+
+`ASCII-Scramble is a shoot'em up for MS DOS text mode using only ASCII
+characters. It also works with Windows provided you know 
+`[`how to get an MS DOS prompt or command line`](http://www.computerhope.com/issues/chdos.htm)`.
+For other platforms, you can use `[`DOSBox`](http://www.dosbox.com/)`.`
+
+![Screenshot](screenshot.png "ASCII-Scramble in action!")
+
+`Main features are:`
+
+- `needs only 7 bit ASCII characters and 3 different colors to render epic 
+  space battles`
+- `no annoying sound`
+- `tiny EXE file (less than 40k)`
+- `requires about 10k of memory at run time`
+- `runs at usable speed even with original 4.77 MHz XTs`
+
+`For installation, controls and more information, read the README.TXT.`
+
+`ASCII-Scramble is distributed under the BSD license. To obtain the source 
+code, visit `[`<https://github.com/roskakori/ASCII-Scramble>`](https://github.com/roskakori/ASCII-Scramble)`. To compile, use 
+the freely available 
+`[`Turbo Pascal 5.5`](http://progopedia.com/version/turbo-pascal-5.5/)` or
+possibly any later version.`

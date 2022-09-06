@@ -1,4 +1,4 @@
-title: Introduction to Pygments
+title: Django meets Flutter
 ---
 pub_date: 2017-04-04
 ---
@@ -6,16 +6,26 @@ author: Thomas Aglassinger
 ---
 intro:
 
-[Pygments](https://pygments.org/) is a Python packages to syntax highlight
-more than 300 programming languages and text formats. 
+The Django framework is one option to implement RESTful API's using the Python
+programming language. In combination with its integrated ORM it is particular well suited to provide CRUD 
+operations to relational data via REST. However, web sites rendered with Django
+templates offer only limited interactivity and responsiveness compared modern 
+JavaScript based responsive and interactive web site.
 
-This PyGRAZ talk explains the basics of Pygments and then shows to to utilize
-its API to quickly implement simple source code converters. It also
-describes how to implements your own lexer.
+Flutter allows to implement mobile application in a platform independent way using
+a single code base written in the Dart.
+
+In this Meetup the Python and Flutter community of Graz team up and implement a small
+example application showing how Django and Flutter can work together view and edit
+data stored in an SQL database.
+
+TODO: Upload slides from Meetup to GitHub
+
+TODO: Improve summary and add it to GitHub README.
 
 ---
 body:
 
-TODO
+TODO: Slides
 
-https://www.slideshare.net/roskakori/introduction-to-pygments
+You can find the example code at <https://github.com/pygraz/django-flutter-example>.

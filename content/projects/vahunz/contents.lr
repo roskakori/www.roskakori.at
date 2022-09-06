@@ -1,0 +1,37 @@
+_model: page
+---
+title: Vahunz
+---
+body:
+
+Vahunz is a CLI-based replace command that can supersede many words across 
+several source files with only one invocation.
+
+![Kotzhund logo](vahunz.gif)
+
+Normally the target words will be created randomly, turning meaningful names
+into unreadable garbage. For example, a function name like `read_input_file()`
+could be replaced by `g7B()` or something as useless. Additionally, comments
+and indention can be removed. Text inside string constants and comments will
+not be modified.
+
+As an option, you can specify specific substitutes, so Vahunz can also be 
+applied in a non-destructive manner. This can be used to replace inconsistent,
+too short or unlegible names by something more meaningful. Among programmers,
+this process is known as "The Great Renaming".
+
+The latest version is **version 1.7**, released 16.4.2001
+
+- Read the [README](README.txt) for a short description.
+- Read the [program history](https://roskakori.at/vahunz/manual/future.html#history) to find out what's new
+- Read the [manual](manual/index.html) for more details.
+- View [vahunz.c](source/vahunz/vahunz.c) to get an idea what vahunzed source codes looks like 
+- Download [aminet:dev/misc/vahunz.lha](https://aminet.net/search?name=vahunz&path[]=dev/misc&q_desc=OR&desc=vahunz) 
+  or [vahunz.lha](vahunz.lha) from local copy.
+- Download [vahunz.zip](vahunz.zip) from local copy. This one does not contain any Amiga specific files (binary, icons amiga.ignore and Vahunz-Tschak). 
+
+Vahunz is freeware and requires AmigaOS 2.04 and a 68020 CPU.
+
+As most parts of the source code are written in ANSI C and only uses functions
+of the standard library, you probably can also compile it under most other
+systems.

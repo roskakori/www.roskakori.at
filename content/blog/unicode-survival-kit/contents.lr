@@ -16,6 +16,8 @@ a way that internally only Unicode is used. This ensures that special characters
 German umlauts can always be represented correctly and `UnicodeError` can be avoided.
 
 ---
+slideshare_key: 4ioVVvpNGTWgyE
+---
 body:
 
 Unicode ist für viele Python-Entwickler ein Reizthema, da es im Unterschied zu Sprachen wie Java und C# nicht von 
@@ -37,7 +39,3 @@ Agenda:
 * Lesen und Schreiben von Unicode
 * Umwandlung
 * Unterschiede Python 2 und Python 3
-
-TODO 
-
-https://www.slideshare.net/roskakori/erste-hilfekasten-fuer-unicode-mit-python-54985173

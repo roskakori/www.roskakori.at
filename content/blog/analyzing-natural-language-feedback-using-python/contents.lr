@@ -1,0 +1,23 @@
+title: Analyzing natural language feedback using Python 
+---
+author: 
+---
+pub_date: 2018-05-05
+---
+intro:
+
+Sentiment detection is the process of collecting opinions from text 
+written in natural language and storing them in a structured way. It has
+been around for a while is described in depth by many articles and books.
+Also, there are several tools and libraries available.
+
+However, most of them focus on the English or Chinese language.
+
+This talk from the PyDays Vienna 2018 explains the basics of sentiment
+detection and how to utilize [spaCy](https://spacy.io) in order to
+extract sentiments from restaurant feedbacks. Related code samples
+are provided in an 
+[accompanying Jupyter notebook](https://github.com/roskakori/talks/tree/master/pydays/analyzing_natural_language_feedback_using_python). 
+
+---
+slideshare_key: Ch6iINAo6ISKYD
