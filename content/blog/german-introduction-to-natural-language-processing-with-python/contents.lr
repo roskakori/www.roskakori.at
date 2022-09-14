@@ -1,0 +1,16 @@
+title: (German) Introduction to natural language processing with Python
+---
+pub_date: 2019-04-25
+---
+intro:
+
+This is a talk given at the Linuxtage Graz on 2019-04-25, provided as Jupyter
+notebook to play around with yourself.
+
+TODO: Summarize contents of talk.
+---
+body:
+
+The Jupyter notebook together with instructions on how to obtain the demo data are available from a [GitHub project](https://github.com/roskakori/talks/tree/master/linuxtage/Introduction%20to%20natural%20language%20processing).
+
+[![Video](https://img.youtube.com/vi/bgoBWegVeGY/0.jpg)](https://www.youtube.com/watch?v=bgoBWegVeGY)
