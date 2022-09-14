@@ -8,55 +8,55 @@ Here are some screenshots to show what you can expect with a setup optimized for
 
 ## Blasting Dumb Platforms
 
-![Earth Station](image/earth_station.png)
+![Earth Station](earth_station.png)
 
 Leaving Earth Station, heading for trouble.
 
-![Mission assignment at Titan](image/mission_assignment.png) 	
+![Mission assignment at Titan](mission_assignment.png) 	
 
 Mission assignment at Titan Base: Seek out those Dumb Platforms and blast them to pieces.
 
-![Throwing lines](image/throwing_lines.png)
+![Throwing lines](throwing_lines.png)
 
 There they are! Oh no, they are throwing red lines at me!
 
-![Throwing the mighty rectangle](image/throwing_rectangle.png)
+![Throwing the mighty rectangle](throwing_rectangle.png)
 
 Hah! Feel the wrath of my mighty yellow rectangle! That should give you something to think about.
 
-![Becoming a bubble](image/yellow_bubble.png)
+![Becoming a bubble](yellow_bubble.png)
 
 Indeed. The Dumb Platform turns into a yellow bubble and becomes part of the void. Featuring an explosion that is so loud that you can even hear it in the vacuum!
 
 ## Keep That Framerate Alive!
 
-![Heading for Jupiter](image/heading_for_jupiter.png)
+![Heading for Jupiter](heading_for_jupiter.png)
 
 On the journey to Jupiter. The mission: keep the framerate alive, under all costs. While this picture might look depressing, it definitely reaches the goal considering we are running on a hardware design from 1987, a 50MHz CPU and a graphics card from 1992 without any 3D accelerator whatsoever. Bravo to all components involved!
 
-![Jupiter in sight](image/jupiter_in_sight.png)
+![Jupiter in sight](jupiter_in_sight.png)
 
 Uh oh. Trouble ahead. The framerate can express itself comfortable using a single digit before the dot, announcing an age of numeric Biedermeier.
 
-![Evil ring and ball](image/evil_ring_n_ball.png)
+![Evil ring and ball](evil_ring_n_ball.png)
 
 Things are getting worse. The disastrous duo consisting of The Evil Hula Ring and The MHz-sucking Texture Ball represents a serious threat to the heroic framerate...
 
-![Hula taking over](image/hula_taking_over.png)
+![Hula taking over](hula_taking_over.png)
 
 Mayday, Mayday! Mission object collapsing! Evil Hula Ring about to take over the entire screen, together with the sanity of the player. Now we are an easy target - even for Dumb Platforms... Fortunately, those are hanging out a couple of moons away.
 
-![Kickstart over hula](image/kickstart_over_hula.png)
+![Kickstart over hula](kickstart_over_hula.png)
 
-Activate the afterburner, and here we go again. The mighty Shift-A key resolved the situation. Clearly over the hill - and the Hula Ring -, the framerate slowly recovers.
+Activate the afterburner, and here we go again. The mighty Shift-A key resolved the situation. Clearly over the hill - and the Hula Ring -, the frame rate slowly recovers.
 
-![Back to the void](image/back_to_the_void.png)
+![Back to the void](back_to_the_void.png)
 
 Yes! We've made it. Back in empty space, all system go. Now, where are those Dumb Platforms again?
 
 ## Network Rendezvous in Space
 
-![Network game](image/network.png) 	
+![Network game](network.png)
 
 Yes, network gaming is possible. You can even start two Orbits on the same machine, one instance running as server, the other as client. However, it eats up twice the CPU, so its no fun on 68k.
 
