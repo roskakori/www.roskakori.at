@@ -23,9 +23,7 @@ this process is known as "The Great Renaming".
 The latest version is **version 1.7**, released 16.4.2001
 
 - Read the [README](README.txt) for a short description.
-- Read the [program history](https://roskakori.at/vahunz/manual/future.html#history) to find out what's new
-- Read the [manual](manual/index.html) for more details.
-- View [vahunz.c](source/vahunz/vahunz.c) to get an idea what vahunzed source codes looks like 
+- View [vahunz.c](vahunz.c) to get an idea what vahunzed source codes looks like 
 - Download [aminet:dev/misc/vahunz.lha](https://aminet.net/search?name=vahunz&path[]=dev/misc&q_desc=OR&desc=vahunz) 
   or [vahunz.lha](vahunz.lha) from local copy.
 - Download [vahunz.zip](vahunz.zip) from local copy. This one does not contain any Amiga specific files (binary, icons amiga.ignore and Vahunz-Tschak). 

@@ -98,9 +98,20 @@ on modern hardware and platforms.
   my Trac projects to GitHub, I naturally lost interest in it.
   It does not work anymore, but might be useful as basis for
   an updated version.
+- [Vahunz](/projects/vahunz/) increases or
+  decreases the legibility or of source code names. It scans a
+  whole source code tree and collects variable and function
+  names in a dictionary. The user can then decide what to do
+  about each name: leave it untouched, assign a more meaningful
+  one, or let vahunz generate a random one. (License: open
+  source; platform independent; programming language: portable
+  C)
 
+## Ancient Amiga projects
 
-# Ancient Amiga projects
+The project below were develop exclusively for 
+[Amiga family of personal computers](https://en.wikipedia.org/wiki/Amiga).
+They are unmaintained and collected here purely for historic purpose.
 
 - [Sofa](https://github.com/roskakori/sofa), a port of the SmartEiffel Eiffel compiler (now forked to 
   [LibertyEiffel](https://www.liberty-eiffel.org/)) for AmigaOS Classic. 
@@ -111,14 +122,6 @@ on modern hardware and platforms.
   [CubicIDE](https://www.softwareandcircuits.com/division/amiga/products/cubic/index.html)). 
   It simplifies developing Eiffel programs by adding syntax
   coloring, a procedure browser and documentation browser.
-- [Vahunz](/projects/vahunz/) increases or
-  decreases the legibility or of source code names. It scans a
-  whole source code tree and collects variable and function
-  names in a dictionary. The user can then decide what to do
-  about each name: leave it untouched, assign a more meaningful
-  one, or let vahunz generate a random one. (License: open
-  source; platform independent; programming language: portable
-  C)
 - [WgetRexx](/projects/wgetrexx/) integrates the
   recursive download tool [wget](http://www.gnu.org/software/wget/)
   into various Amiga web browsers using ARexx. It makes it easy 
