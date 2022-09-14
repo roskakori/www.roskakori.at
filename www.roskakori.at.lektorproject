@@ -3,3 +3,13 @@ name = www.roskakori.at
 
 [packages]
 lektor-markdown-highlighter = 0.3.2
+
+[alternatives.en]
+name = English
+primary = yes
+locale = en_US
+
+[alternatives.de]
+name = German
+url_prefix = /de/
+locale = de
