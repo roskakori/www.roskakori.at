@@ -2,6 +2,7 @@ title: About this Website
 ---
 body:
 
-This is a website that was made with the Lektor quickstart.
+This website was made with:
 
-And it does not contain a lot of information.
+- [Lektor](https://www.getlektor.com/), a static site generator with an included CMS-like
+- [Bootstrap](https://getbootstrap.com/), a collection of CSS components for responsive web design
