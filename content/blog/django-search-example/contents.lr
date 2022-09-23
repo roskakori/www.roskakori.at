@@ -1,0 +1,42 @@
+title: Full text search with Django and PostgreSQL
+---
+body:
+
+To set up the project, follow the instructions in the 
+[README](https://github.com/roskakori/django-search-example#readme).
+
+- [#1](https://github.com/roskakori/django-search-example/issues/1) Add naive search based on SQL-Like
+  - Allows to search for single words very slowly using SQL “like” operator
+  - No pull request, code can be found in [main branch](https://github.com/roskakori/django-search-example)
+- [#2](https://github.com/roskakori/django-search-example/issues/2) Add advanced search queries
+  - Allow search queries with boolean operators, phrases and prefix-search
+  - Changed files in [#8](https://github.com/roskakori/django-search-example/pull/8/files)  
+- [#3](https://github.com/roskakori/django-search-example/issues/3) Add ranking
+  - Sort search results by rank
+  - Changed files in [#9](https://github.com/roskakori/django-search-example/pull/9/files)  
+- [#4](https://github.com/roskakori/django-search-example/issues/4) Add search index
+  - Improve performance of search by indexing 
+  - Changed files in [#10](https://github.com/roskakori/django-search-example/pull/10/files) 
+- [#5](https://github.com/roskakori/django-search-example/issues/5) Add weights
+  - Weight findings differently depending on the field it is found in (for example, title vs body text)
+  - Changed files in [#11](https://github.com/roskakori/django-search-example/pull/11/files)  
+- [#6](https://github.com/roskakori/django-search-example/issues/6) Improve rank of long documents
+  - Long documents containing the search team multiple times have a lower rank than shorter documents with the same number of occurrences.
+  - Changed files in [#13](https://github.com/roskakori/django-search-example/pull/13/files)  
+- [#7](https://github.com/roskakori/django-search-example/issues/7) Add search headlines for text and title
+  - On the search result page, the searcher can see search headline of both the title and text.
+  - Changed files in [#14](https://github.com/roskakori/django-search-example/pull/14/files)  
+- [#12](https://github.com/roskakori/django-search-example/issues/12) Add language support
+  - Use stopwords and stemming depending on language of the text
+  - Changed files in [#15](https://github.com/roskakori/django-search-example/pull/15/files)  
+
+---
+intro:
+
+Django applications that use PostgreSQL as database can utilize its 
+[full text search](https://www.postgresql.org/docs/current/textsearch.html) capabilities.
+The following issues and educational pull requests gradually introduce new 
+features. Look at the changed files to learn what was needed to implement it.
+
+---
+pub_date: 2022-06-07

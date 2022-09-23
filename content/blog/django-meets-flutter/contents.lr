@@ -9,23 +9,19 @@ intro:
 The Django framework is one option to implement RESTful API's using the Python
 programming language. In combination with its integrated ORM it is particular well suited to provide CRUD 
 operations to relational data via REST. However, web sites rendered with Django
-templates offer only limited interactivity and responsiveness compared modern 
-JavaScript based responsive and interactive web site.
+templates offer only limited interactivity and responsiveness compared ro modern 
+responsive and interactive web site.
 
-Flutter allows to implement mobile application in a platform independent way using
-a single code base written in the Dart.
+Flutter allows to implement mobile application in a platform independent manner using
+a single code base written in the Dart language.
 
 In this Meetup the Python and Flutter community of Graz team up and implement a small
-example application showing how Django and Flutter can work together view and edit
+example application showing how Django and Flutter can work together and view and edit
 data stored in an SQL database.
-
-TODO: Upload slides from Meetup to GitHub
-
-TODO: Improve summary and add it to GitHub README.
 
 ---
 body:
 
-TODO: Slides
+[Download slides](https://github.com/pygraz/django-flutter-example/raw/main/Flutter%20%26%20Python%20Meetup%20Pr%C3%A4sentation.pptx)
 
 You can find the example code at <https://github.com/pygraz/django-flutter-example>.
