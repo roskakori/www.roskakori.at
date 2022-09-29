@@ -7,7 +7,15 @@ intro:
 This is a talk given at the Linuxtage Graz on 2019-04-25, provided as Jupyter
 notebook to play around with yourself.
 
-TODO: Summarize contents of talk.
+It covers the following topics:
+
+- tag clouds, a visual representation of the most important words in a text
+- explanation of basic terminology
+- splitting text in sentences and works (tokens)
+- token types and their roles
+- sentiment analysis to extract the mood and rating of a text
+- topic modelling to cluster similar texts together
+
 ---
 body:
 
