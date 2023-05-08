@@ -4,6 +4,12 @@ name = www.roskakori.at
 [packages]
 lektor-markdown-highlighter = 0.3.2
 
+[servers.production]
+name = Production
+enabled = yes
+default = yes
+target = ftp://e15175-ftp.services.easyname.eu/
+
 [alternatives.en]
 name = English
 primary = yes

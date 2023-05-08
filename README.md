@@ -9,11 +9,11 @@ Create the [poetry](https://python-poetry.org/) environment:
 
 ```bash
 cd $WORKSPACE/www.roskakori.at
-poetry install
+sh scripts/setup_project.sh
 ```
 
 Run server that automatically rebuild changed files and open browser:
 
 ```bash
-poetry run lektor server
+sh scripts/run_server.sh
 ```
