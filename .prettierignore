@@ -1,0 +1,5 @@
+# Ignore HTML templates
+*.html
+
+# Ignore Lektor content pages because otherwise they are reformatted as markdown.
+*.lr
