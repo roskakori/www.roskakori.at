@@ -1,5 +1,6 @@
 [project]
 name = www.roskakori.at
+url = https://www.roskakori.at
 
 [packages]
 lektor-markdown-highlighter = 0.3.2
