@@ -1,0 +1,155 @@
+title: Guidelines for commit messages
+---
+meta_description: Guidelines for clear, concise and consistent commit messages
+---
+meta_keywords: git, vcs, commit message, guidelines
+---
+body:
+
+This article provides guidelines for clear, concise and consistent commit
+messages.
+
+Commit messages are stored in the version control system together with the
+source files a commit includes. They are intended to help developers to
+understand why a certain change was made and what was the goal of it.
+
+I use these guidelines in my own projects unless there are already other,
+already existing guidelines to adhere to. For example, when an open source
+project already has its own CONTRIBUTING or a company has established
+existing standards.
+
+The target audience are developers contributing to one of my projects, be it
+open source or commercial. It can also be of interest for people who are
+looking for a basis for their own guidelines.
+
+This document is distributed under the
+[CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
+## General structure
+
+Commit messages consist of the following parts:
+
+1. A reference to the issue the commit is related to
+2. A short description of the commit
+3. Optional: Further details describing what the commit includes and what its
+   purpose
+
+## Issue reference
+
+The issue reference already gives access to a lot of information about the
+background of the commit. This is particularly true if your issue descriptions
+use a high quality definition of ready.
+
+The exact syntax for the issue reference depends on the issue tracker used.
+For GitHub and GitLab this would be `#<number>`. For example: `#123`
+
+Many developer tools will convert this into a hypertext reference to the
+issue tracker.
+
+Because git treats sentences starting with `#` as comments, you might have to
+add the following to your `~/.gitconfig`:
+
+```ini
+[core]
+    commentChar = ";"
+```
+
+## Short description
+
+The short descriptions with a verb in present tense describing the general
+nature of the commit. Common verbs are:
+
+- Add: Add a new feature and consequently improve the value of the product
+- Change: Change an existing behaviour to something else to consequently
+  better match the expectations of the user
+  - Rename
+  - Move
+  - Update
+- Fix: Fix a bug and consequently change the behavior to something that would
+  have been expected to be the case from the beginning
+- Remove: The product loses some functionality
+- Clean up: Clean something up so that the product does the same thing as
+  before but in a better way. Example:
+
+After the verb, add more details to describe the commit.
+
+The short description can be considered to be a heading and therefor does not
+end with a dot
+
+Examples:
+
+- Add command line option `--some` to do something
+- Change color of "Ok" button from gray to green
+  - Update dependencies
+- Remove support for Python 3.6
+- Fix division by zero when leaving field `size` empty
+- Clean up spelling and grammar
+  - Clean up naming
+  - Clean up formatting
+
+## Further details
+
+Sometimes the issue number and short description might not seem to be enough
+to understand to what end the commit has been made.
+
+In such a case, add and empty line and then any text that seems helpful.
+
+Use Markdown formatting to render lists, source code names etc.
+
+This part can include:
+- In case the commit does not implement yet everything intended, add a
+  sentence along the line
+
+  > This is a work in progress.
+
+- Discussion why a certain approach was taken and others discarded. However,
+  alternatively consider using `NOTE` comments in the source code assuming in
+  case the code would otherwise be confusing to a developer.
+- Links to further references.
+
+
+## Other styles
+
+There are other style you might want to explore for further inspiration. Each
+style has a rationale why I do not use it (yet) in my projects. Your values
+and priorities may vary.
+
+- Use past tense instead of present tense.
+
+  Rationale: This would seem more natural because a commit message describes
+  what has been done instead of what's happening right now. However,
+  automatically generated commit messages on GitHub (e.g. "Merge x into y")
+  use present tense, so this would result in inconsistent tenses in the log.
+
+- Use a maximum length of the first line in the commit message.
+
+  Rationale: This typically is 72, and some tools cut it off before that. So
+  instead try to phrase the commit message as short as possible, but avoid
+  omitting vital information just to make an arbitrary limit happy.
+
+- Move the issue reference to the end of the first line.
+
+  Rationale: While this avoids having to mess with `~/.gitconfig`, it also
+  can result in situations where tools cut off the issue reference from the
+  part displayed. With the issue reference being really important, taking this
+  risk does not seem to be worth it.
+
+- Use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+  Rationale: While it would be convenient to have commit messages that can be
+  processed both by humans and machines, the version 1.0.0 does not quite
+  seem to reach the first goal. In particular instead of communication the
+  general nature with an easy to grasp english verb, conventional commits tend
+  to start with abbreviations ("feat"), special characters ("!") or scream in
+  upper case ("BREAKING CHANGE") before actually telling something interesting
+  on what the change is about.
+
+- Use emojis, for example as described in the
+  [Atom editor contributing guide]( https://github.com/atom/atom/blob/master/CONTRIBUTING.md#git-commit-messages)
+
+  Rationale: While this might make it easier to create reports from commit
+  messages and also visually communicate certain details quickly, it feels
+  that the commit log becomes rather noisy. Also, everyone has to remember
+  which emoji to use in which case. Combine this with git's inability to
+  easily modify already pushed commit messages, this has a high probability to
+  result in a low data quality.

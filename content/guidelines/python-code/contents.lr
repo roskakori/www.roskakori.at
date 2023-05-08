@@ -1,0 +1,62 @@
+title: Python guidelines
+---
+meta_description: Guidelines for Python code that is easy to understand and maintain
+---
+meta_keywords: python, style, code, guidelines
+---
+body:
+
+This article provides a definition of ready to enable a development team to
+decide when a task is ready to be started with.
+
+The target audience are Python developers contributing to one of my projects, be it
+open source or commercial. It can also be of interest for people who are
+looking for a basis for their own guidelines.
+
+This document is distributed under the
+[CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
+## Formatting
+
+- Use a maximum line length of 120. Rationale: The standard 79 just result in
+  a lot of unused space on a 27-inch monitor.
+- Use a [pre-commit](https://pre-commit.com/) hook that already takes care of
+  most things formatting, typically by using tools like
+  [black](https://pypi.org/project/black/),
+  [isort](https://pypi.org/project/isort/) and others.
+
+As a starting point for your own pre-commit hook, you can use pygount's
+[.pre-commit-config.yaml](https://github.com/roskakori/pygount/blob/master/.pre-commit-config.yaml).
+
+## Naming
+
+- In general, use the
+  [PEP8 naming conventions](https://peps.python.org/pep-0008/#naming-conventions).
+  Concerning upper/lower/camel/snake case, they are a mess, but almost every
+  Python projects conforms to them, therefor consistency trumps reason.
+  - Exception: For package names consisting of multiple words, use an underscore
+    (`_`) to separate them.
+
+    Rationale: The pain of garbled, illegible packaged names is just too much.
+
+- For acronyms use treat only the first character as upper case.
+  - DO: XmlParser<br>DON'T: XMLParser
+  - DO: parse_xml<br>DON'T: parse_x_m_l
+
+- Avoid abbreviations unless you can save at least 4 letters. Example for popular
+  abbreviations that could be rephrased better:
+
+  | Instead of... | meaning...  | better use... |
+  |---------------|-------------|---------------|
+  | dir           | directory   | folder        |
+  | dst           | destination | target        |
+  | src           | source      | source        |
+
+## Complexity
+
+- Split up long functions into multiple sub-functions or a class with multiple
+  methods.
+
+  This guideline deliberately does not include an exact definition of long.
+  For more details on this topic, refer to the book "Clean code", chapter 3,
+  "Functions".

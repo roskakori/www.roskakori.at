@@ -1,0 +1,22 @@
+title: Guidelines
+---
+body:
+
+When developing software over the years I accumulated a couple of good
+practices I found to result in code that is easier to maintain. I keep
+applying these guidelines across projects, unless there are others (for
+example when contributing to an open source project with its own
+`CONTRIBUTING` style, or when freelancing for companies with their own
+style).
+
+I collect these documents here so that I can reference them for my own
+projects. But feel free to use or modify them for your own purposes.
+
+- [Definition of ready](/guidelines/definition-of-ready/): Describes when
+  the implementation of a task can start
+- [Definition of done](/guidelines/definition-of-ready/): Describes when
+  a task is finished and can be distributed to the customer or users
+- [Commit messages](/guidelines/commit-messages/): The short messages used
+  when committing source code changes to a version control system such as git.
+- [Python coding style](/guidelines/python-code): Guidelines for Python code
+  that is easy to understand and maintain

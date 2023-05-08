@@ -1,0 +1,97 @@
+title: Definition of ready
+---
+meta_description: A clear and concise definition of ready to be used as basis for your own projects
+---
+meta_keywords: dor, ready, definition of ready, agile, kanban, scrum
+---
+body:
+
+This article provides a definition of ready to enable a development team to
+decide when a task is ready to be started with.
+
+The target audience are developers contributing to one of my projects, be it
+open source or commercial. It can also be of interest for people who are
+looking for a basis for their own guidelines.
+
+This document is distributed under the
+[CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
+## Scope
+
+These guidelines only apply to issues once they enter the state "ready".
+During earlier states ("new", "backlog") issues only need a descriptive
+title. Everything else can be empty and added as more details emerge.
+
+## General
+
+- The issue has at least one label to describe its context.
+- The issue is assigned to a milestone.
+- The issue is assigned to a project.
+- The state of the issue is "ready"
+
+## Feature issues
+
+**TODO**: Guidelines for title
+
+- Optionally: In the description a section "Dependencies" list everything that
+  is needed before the implementation can start. For example:
+  - References to issues that need to be completed first
+  - Fixes or enhancements of external libraries
+  - External rules or laws to come into effect
+  - Answers from external contacts to critical questions
+- The description has a section "Story" describing a user story.
+  - The user story uses the template:
+    > As (role) I want (feature) so that I can (have value).
+  - Exceptions: Pure improvement or cleanup issues can omit the user story.
+- The description has a section "Goals" (acceptance criteria).
+  - Together, all goals describe what is needed for the issue to be done.
+  - Each goal describes a state that can be tested.
+    **TODO**: Link to guidelines for requirements.
+  - Goals that cannot be validated by an end user or tester are marked as
+    "Internal:". For example:
+    > Internal: All TODO#123 comments are resolved.
+- Optionally: At the end of the "Goals" section the estimated effort is noted.
+  For example:
+  > Estimation: 10h
+  Rationale: This can be used by Siisurit to compare it with the actual effort
+  from time tracking
+- Optionally: The description has a section "References" that points to
+  resources needed to implement it. For example:
+  - Links to API documentation
+  - Process diagrams
+  - Attachments with required external documentation
+- Optionally: The description has a sections "Example" that point to or show
+  example input data or expected output data. These can be helpful to describe
+  the scope or provide early test data.
+
+## Defect issues
+
+If the issue concerns a defect to be fixed, the description uses the template:
+
+1. Steps to reproduce
+   - If the defect cannot be reproduced yet, mention this here.
+2. Actual result
+3. Expected result
+
+Optionally attach or reference data that might aid in the analysis. For
+example:
+- Screenshots or videos
+- Log files
+- Stack traces
+- Links to support issues
+- Quotes from emails
+
+## Pull requests
+
+When a pull request is ready to be reviewed:
+
+- The title references the original issue starting with the issue number.
+- The text refers to the original issue, either as:
+  - "Close #123": After merging the pull request on GitHub or GitLab, this
+    automatically closes the original issue.
+  - "See #123": Even after merging the pull request the original issue remains open
+- The pull request has no labels. Rationale: Relevant labels are already set at the original issue.
+- **Important** Leave the "Development" field empty for now and only after
+  merging the pull request also link it to the original issue. Otherwise, the
+  issue would automatically be closed upon merge. This is a misfeature of
+  GitHub that cannot be disabled.
