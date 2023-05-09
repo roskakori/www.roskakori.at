@@ -16,4 +16,124 @@ looking for a basis for their own guidelines.
 This document is distributed under the
 [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
 
-**TODO**: Add the actual definition of done.
+## All goals have been reached
+
+All goals (acceptance criteria) mentioned in the issue have been reached and
+checked out.
+
+If during the implementation it turned out a specific goal can not be reached,
+move it to a separate section "Skipped goals", change the checkmark into a
+simple bullet point, render the goal text as strike through and give a reason
+why it was skipped.
+
+Example:
+
+- Original goal:
+
+  - [ ] An admin can choose for which customers and projects work entries are
+        downloaded in the first place in order to avoid reaching the API rate limit.
+
+- Skipped goal:
+
+  - ~~An admin can choose for which customers and projects work entries are~~
+    ~~downloaded in the first place in order to avoid reaching the API rate~~
+    ~~limit.~~ <br>Moved to #123
+
+## Pre-commit checks pass
+
+If the project has [pre-commit](https://pre-commit.com/) configured, all
+checks pass.
+
+Pre-commit checks typically cover formatting style, but can also include
+checks for file size, complexity gates and even run unit tests.
+
+## Documentation for new features has been added
+
+This includes:
+
+- User guide
+- Release notes, for example:
+  - The CHANGES document has been updated with short descriptions with links
+    to the relevant section in the user guide
+- Developer documentation, for example:
+  - New tools or development processes are described in the README or
+    CONTRIBUTING.
+  - For major architectural changes, overview diagrams etc. have been added.
+  - For new processes to implement, process diagrams have been added.
+
+## Existing tests have been updated
+
+If the changes broke existing tests, a reasonable effort has been made to
+modify these tests so the pass again.
+
+Removing existing tests only if the changes where so substantial that there is
+no way to make them work again. For example after an architectural
+restructuring that removed entire semantic classes without any replacement.
+
+## Test for new features have been added
+
+For new features, add at least one integration test to try the "happy path"
+where everything works out.
+
+## Automatic tests pass
+
+All automatic tests pass.
+
+If the project has continuous integration (for example via Jenkins or GitHub
+actions), the CI run passes.
+
+## Test coverage goals are reached
+
+The project specific test coverage goals have been reached.
+
+Inspiration for such goals.
+
+- Prefer path coverage over branch coverage over statement coverage - depending
+  on what your tools are able to provide.
+- The test coverage across the entire project must be at least 82%
+
+  Rationale: A test coverage of about 80% can be considered somewhat decent.
+  To make the number seem less arbitrary, we use 82%.
+
+- Ignore unreachable code from coverage
+
+- Ignore code that should never be reached from coverage.
+
+  Example:
+  ```python
+  if this_can_never_happen:
+      raise NotImplementedError()  # Ignore this from coverage
+  ```
+
+- For critical functions, the test coverage must be 100% - if possible with reasonable effort
+
+  - The project needs to define what "critical functions" are. Some examples:
+    - Everything related to payment, including all error cases.
+    - Functions where bugs would cause major monetary damage, injuries or loss of live.
+    - Functions where bugs would result in inconsistent data. This particularly concerns
+      race conditions, referential integrity and transactions.
+  - The team needs to define what constitutes "reasonable effort". Example
+    approaches for that:
+    - Maximum percentage of total effort to implement the issue.
+
+## Review comments have been resolved
+
+If another developer reviewed the pull request and left comments, all of them
+have been resolved.
+
+If some comments are not critical but would cause delays, it can be agreed
+upon to move these comments to a separate issue, reply to the comment with
+something along the line
+
+> Will be resolved with #123.
+
+and resolve the comment.
+
+## Changes have been merged
+
+The pull request with the source code changes related to the issue has been
+merged into the release branch without conflicts.
+
+If conflicts exist, first merge the release branch into the issue branch and
+resolve the conflicts there. Preferably do all this before the code review
+starts.

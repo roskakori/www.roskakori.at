@@ -33,7 +33,7 @@ title. Everything else can be empty and added as more details emerge.
 
 **TODO**: Guidelines for title
 
-- Optionally: In the description a section "Dependencies" list everything that
+- Optional: In the description a section "Dependencies" list everything that
   is needed before the implementation can start. For example:
   - References to issues that need to be completed first
   - Fixes or enhancements of external libraries
@@ -50,48 +50,67 @@ title. Everything else can be empty and added as more details emerge.
   - Goals that cannot be validated by an end user or tester are marked as
     "Internal:". For example:
     > Internal: All TODO#123 comments are resolved.
-- Optionally: At the end of the "Goals" section the estimated effort is noted.
+- Optional: At the end of the "Goals" section the estimated effort is noted.
   For example:
   > Estimation: 10h
-  Rationale: This can be used by Siisurit to compare it with the actual effort
-  from time tracking
-- Optionally: The description has a section "References" that points to
+
+  Rationale: This can be used by [Siisurit](https://www.siisurit.com/) to
+  compare it with the actual effort from time tracking.
+- Optional: The description has a section "References" that points to
   resources needed to implement it. For example:
   - Links to API documentation
   - Process diagrams
   - Attachments with required external documentation
-- Optionally: The description has a sections "Example" that point to or show
+- Optional: The description has a sections "Example" that point to or show
   example input data or expected output data. These can be helpful to describe
   the scope or provide early test data.
 
-## Defect issues
+## Bug issues
 
-If the issue concerns a defect to be fixed, the description uses the template:
+When a feature issue went into production and turned out not to work as
+expected, create a bug issue.
 
-1. Steps to reproduce
-   - If the defect cannot be reproduced yet, mention this here.
-2. Actual result
-3. Expected result
-
-Optionally attach or reference data that might aid in the analysis. For
-example:
-- Screenshots or videos
-- Log files
-- Stack traces
-- Links to support issues
-- Quotes from emails
+- The issue title indicates what needs to be fixed. Examples:
+  - [pygount#33](https://github.com/roskakori/pygount/issues/33)
+    Fix count of string only lines
+- The issue is labeled as bug.
+- The issue description matches the following template:
+  > 1. Steps to reproduce
+  >    - If the bug cannot be reproduced yet, mention this here.
+  > 2. Actual result
+  > 3. Expected result
+- Optional: A reference to the original issue that should have implemented the
+  desired functionality.
+  - If there is no such issue and requirement, consider treating the issue as
+    feature that might be billed. This can be particularly true for special
+    cases not described in the original issue because the customer forgot to
+    mention them during the requirement analysis.
+- Optional: The issue references data that might aid in the analysis. For
+  example:
+  - Screenshots or videos
+  - Log files
+  - Stack traces
+  - Links to support issues
+  - Quotes from emails
 
 ## Pull requests
 
 When a pull request is ready to be reviewed:
 
 - The title references the original issue starting with the issue number.
+
+  Example: [pygount#107](https://github.com/roskakori/pygount/pull/107)
+  #106 Clean up source analysis from file
+
 - The text refers to the original issue, either as:
   - "Close #123": After merging the pull request on GitHub or GitLab, this
     automatically closes the original issue.
   - "See #123": Even after merging the pull request the original issue remains open
-- The pull request has no labels. Rationale: Relevant labels are already set at the original issue.
-- **Important** Leave the "Development" field empty for now and only after
-  merging the pull request also link it to the original issue. Otherwise, the
-  issue would automatically be closed upon merge. This is a misfeature of
-  GitHub that cannot be disabled.
+- The pull request has no labels.
+
+  Rationale: Relevant labels are already set at the original issue. Setting
+  the same labels here would be redundant and error-prone.
+- **Important** In GitHub, leave the "Development" field empty for now and
+  only after merging the pull request also link it to the original issue.
+  Otherwise, the issue would automatically be closed upon merge. This is a
+  misfeature of GitHub that cannot be disabled.

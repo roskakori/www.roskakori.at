@@ -14,7 +14,7 @@ projects. But feel free to use or modify them for your own purposes.
 
 - [Definition of ready](/guidelines/definition-of-ready/): Describes when
   the implementation of a task can start
-- [Definition of done](/guidelines/definition-of-ready/): Describes when
+- [Definition of done](/guidelines/definition-of-done/): Describes when
   a task is finished and can be distributed to the customer or users
 - [Commit messages](/guidelines/commit-messages/): The short messages used
   when committing source code changes to a version control system such as git.
