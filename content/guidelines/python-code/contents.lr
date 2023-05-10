@@ -39,7 +39,7 @@ As a starting point for your own pre-commit hook, you can use pygount's
 
     Rationale: The pain of garbled, illegible packaged names is just too much.
 
-- For acronyms use treat only the first character as upper case.
+- For acronyms treat only the first character as upper case.
   - DO: XmlParser<br>DON'T: XMLParser
   - DO: parse_xml<br>DON'T: parse_x_m_l
 

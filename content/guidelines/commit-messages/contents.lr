@@ -69,7 +69,7 @@ nature of the commit. Common verbs are:
   have been expected to be the case from the beginning
 - Remove: The product loses some functionality
 - Clean up: Clean something up so that the product does the same thing as
-  before but in a better way. Example:
+  before but in a better way.
 
 After the verb, add more details to describe the commit.
 
