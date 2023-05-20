@@ -1,0 +1,29 @@
+title: Dart coding guidelines
+---
+meta_description: Guidelines for Dart code that is easy to understand and maintain
+---
+meta_keywords: dart, style, code, guidelines
+---
+body:
+
+This article provides guidelines for [Dart](https://dart.dev/) code that is
+easy to understand and maintain.
+
+The target audience are Dart developers contributing to one of my projects, be it
+open source or commercial. It can also be of interest for people who are
+looking for a basis for their own guidelines.
+
+This document is distributed under the
+[CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
+## Style and naming
+
+Apple the guidelines described in
+[Effective Dart: style](https://dart.dev/guides/language/effective-dart/style).
+
+Exception: Maximum line length is 120.
+
+## Pre-commit hooks
+
+Use [dart-pre-commit](https://pub.dev/packages/dart_pre_commit).
+
