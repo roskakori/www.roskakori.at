@@ -6,8 +6,8 @@ meta_keywords: python, style, code, guidelines
 ---
 body:
 
-This article provides a definition of ready to enable a development team to
-decide when a task is ready to be started with.
+This article provides guidelines for [Python](https://www.python.org/) code that is
+easy to understand and maintain.
 
 The target audience are Python developers contributing to one of my projects, be it
 open source or commercial. It can also be of interest for people who are
