@@ -1,0 +1,70 @@
+title: General naming guidelines
+---
+meta_description: Guidelines naming in source code
+---
+meta_keywords: naming, guidelines, programming, software
+---
+body:
+
+This article provides guidelines for naming source code items like variables,
+function and classes in a way that makes the code easy to understand and 
+maintain.
+
+## Introduction
+
+These guidelines are independent of the programming language used, and may be
+overruled by language specific guidelines. Regardless, all of
+[my language specific guidelines](/guidelines/) refer to this document as
+basis.
+
+I use these guidelines in my own projects unless there are already other,
+already existing guidelines to adhere to. For example, when an open source
+project already has its own CONTRIBUTING or a company has established
+existing standards.
+
+The target audience are developers contributing to one of my projects, be it
+open source or commercial. It can also be of interest for people who are
+looking for a basis for their own guidelines.
+
+This document is distributed under the
+[CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
+## Use natural naming
+
+
+## Avoid abbreviations
+
+## Name procedures after what they do
+
+Procedures perform an action that changes the state of the software.
+
+Their names should start with a verb and optionall more terms specifying in
+greater detail what they act on.
+
+Examples:
+- `sort()`
+- `copy_file(...)`
+
+## Name functions after their result
+
+
+## If a function cannot deliver what the name promises, fail
+
+If the function encounters an error while attempting to deliver the result its
+name promises, make it fail using the mechanisms the programming language
+offers for that such as exception handling.
+
+Example:
+
+```python
+import os
+
+
+def do_the_foo():
+    foo = os.environ.get("FOO")
+    if foo is None:
+        raise FooError("Cannot do the foo: environment variable FOO must be set.")
+    ...
+```
+
+
