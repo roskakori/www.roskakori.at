@@ -2,7 +2,7 @@ title: Dart coding guidelines
 ---
 meta_description: Guidelines for Dart code that is easy to understand and maintain
 ---
-meta_keywords: dart, style, code, guidelines
+meta_keywords: dart, style, source code, guidelines
 ---
 body:
 
@@ -18,7 +18,7 @@ This document is distributed under the
 
 ## Style and naming
 
-Apple the guidelines described in
+Apply the guidelines described in
 [Effective Dart: style](https://dart.dev/guides/language/effective-dart/style).
 
 Exception: Maximum line length is 120.

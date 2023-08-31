@@ -16,9 +16,10 @@ projects. But feel free to use or modify them for your own purposes.
   the implementation of a task can start
 - [Definition of done](/guidelines/definition-of-done/): Describes when
   a task is finished and can be distributed to the customer or users
+- Coding style
+    - [General coding guidelines](/guidelines/coding-general/): General guidelines source code independent of the programming language that is easy to understand and maintain
+    - [Python coding style](/guidelines/coding-python/): Guidelines for Python code that is easy to understand and maintain
+    - [Dart coding style](/guidelines/coding-dart/): Guidelines for Dart code that is easy to understand and maintain
 - [Commit messages](/guidelines/commit-messages/): The short messages used
   when committing source code changes to a version control system such as git.
-- [Python coding style](/guidelines/coding-python): Guidelines for Python code
-  that is easy to understand and maintain
-- [Dart coding style](/guidelines/coding-dart): Guidelines for Dart code
-  that is easy to understand and maintain
+- [Code reviews](/guidelines/code-reviews/): When another developer takes a look at the code of one developer and points out possible issues that need improvement.

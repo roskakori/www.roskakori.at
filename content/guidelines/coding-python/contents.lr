@@ -2,7 +2,7 @@ title: Python guidelines
 ---
 meta_description: Guidelines for Python code that is easy to understand and maintain
 ---
-meta_keywords: python, style, code, guidelines
+meta_keywords: python, style, source code, guidelines
 ---
 body:
 
@@ -42,21 +42,3 @@ As a starting point for your own pre-commit hook, you can use pygount's
 - For acronyms treat only the first character as upper case.
   - DO: XmlParser<br>DON'T: XMLParser
   - DO: parse_xml<br>DON'T: parse_x_m_l
-
-- Avoid abbreviations unless you can save at least 4 letters. Example for popular
-  abbreviations that could be rephrased better:
-
-  | Instead of... | meaning...  | better use... |
-  |---------------|-------------|---------------|
-  | dir           | directory   | folder        |
-  | dst           | destination | target        |
-  | src           | source      | source        |
-
-## Complexity
-
-- Split up long functions into multiple sub-functions or a class with multiple
-  methods.
-
-  This guideline deliberately does not include an exact definition of long.
-  For more details on this topic, refer to the book "Clean code", chapter 3,
-  "Functions".

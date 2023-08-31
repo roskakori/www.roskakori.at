@@ -1,8 +1,8 @@
-title: General naming guidelines
+title: General coding guidelines
 ---
-meta_description: Guidelines naming in source code
+meta_description: General guidelines for source code that is easy to understand and maintain
 ---
-meta_keywords: naming, guidelines, programming, software
+meta_keywords: source code, naming, guidelines, programming, software
 ---
 body:
 
@@ -31,8 +31,19 @@ This document is distributed under the
 
 ## Use natural naming
 
+For an introduction to natural naming, see [A guide to natual naming](https://dl.acm.org/doi/pdf/10.1145/382080.382637) (by Daniel Keller, from the ACM Digital Library).
 
 ## Avoid abbreviations
+
+Avoid abbreviations unless you can save at least 4 letters. Example for popular abbreviations that could be rephrased better:
+
+```
+| Instead of... | meaning...  | better use... |
+|---------------|-------------|---------------|
+| dir           | directory   | folder        |
+| dst           | destination | target        |
+| src           | source      | source        |
+```
 
 ## Name procedures after what they do
 
@@ -42,11 +53,13 @@ Their names should start with a verb and optionall more terms specifying in
 greater detail what they act on.
 
 Examples:
-- `sort()`
-- `copy_file(...)`
+- `sort(items: list)`: Modify an existing array so that the items in it are sorted.
+- `copy_file(source_path: Path, target_path: Path)` : Create a copy of the file named `source_path` as a new file named `target_path`.
 
 ## Name functions after their result
 
+Examples:
+- `sorted(items: list) -> list`: Return a copy of `items` where the entries are sorted. Leave the original `items` passed as parameter as they where.
 
 ## If a function cannot deliver what the name promises, fail
 
@@ -67,4 +80,11 @@ def do_the_foo():
     ...
 ```
 
+## Limit complexity
 
+Split up long functions into multiple sub-functions or a class with multiple methods.
+
+This guideline deliberately does not include an exact definition of "long". For more details on this topic, refer to the book "Clean code", chapter 3, "Functions".
+
+---
+_slug: coding-general
