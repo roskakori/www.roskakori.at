@@ -1,0 +1,51 @@
+_model: page
+---
+title: Guidelines for code reviews
+---
+body:
+
+This document describes guidelines for code reviews as part of pull requests. The target audience are developers and reviewer.
+
+This document is distributed under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+
+## Asking for a code review
+
+A developer can ask to review their code by...
+
+1. ...requesting a specific reviewer in the pull request.
+2. ...moving their issue to the Kanban board column "In review".
+
+## Adding review comments
+
+When a reviewer discovers concerns in the code, they should add a comment at the respective line.
+
+For minor matters and when using GitHub, they can also leave a suggestion on how to modify the code. Example:
+
+![](github-add-suggestion.png)
+
+When done with the review, the reviewer hat to either approve the pull request, or add comments and request changes.
+
+### Commenting on code outside of the changes
+
+When a reviewer notices something outside of code changed for the review, they should still comment on it, and the developer should still fix it.
+
+In GitHub, such comments have to be made on the left side because there is no change on the right side the comment can be attached to. Also note that if the line to be modified is too far away from any changed line, it might not be possible to attach the comment to the line directly. If this is the case, attache the comment to the closest line possible, and start it with mentioning which line it actually belongs to.
+
+## Resolving review comments
+
+If the review accepted the changes, the developer can merge the branch (assuming all CI checks passed, too).
+
+If the reviewer added comments, each of them has to be addressed in one of the following was:
+
+- If the developer agrees with a suggestion, they can immediately apply them. Note the multiple suggestions can be added to a batch, so only a single commit is produced.
+- If a developer agrees with a comment, they have to implement the requested changes and push them.
+
+In both cases, the developer should react to the suggestion or request with a "thumbs up" (👍) so the reviewer knows their comment has been addressed.
+
+- If the developer disagrees with a suggestion or request, they have to add a reply explaining their concerns. Alternatively they can discuss this with the reviewer by other means and then document the result as reply.
+
+Once the developer has addressed all comments one way or the other, the reviewer can walk through them and mark them as resolved. When all comments are resolved, the developer can merge the branch.
+---
+meta_keywords: guidelines, code review, pull request, merge request
+---
+_slug: code-reviews
