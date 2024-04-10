@@ -2,5 +2,4 @@
 /.idea
 /cache
 /output
-/venv/
 *.iml
