@@ -15,4 +15,3 @@ meetings and conferences.
 * "Error Handling in Structured and Object-Oriented Programming Languages" [PDF](Error Handling in Structured and Object-Oriented Programming Languages.pdf): My master's thesis, which examines how well error handling mechanisms in various programming languages support the development of robust software. It also analyzes conditions that lead to error, including mental models and situations that result in human error. Additionally it derives a simple schema for phrasing helpful error messages and outlines how well designed software can support this.
 
 * Various articles for AmigaScene, an Austrian online Amigazine written by the Amiga user group of Graz. While the server is offline by now, you can still download its issues (in German) from [aminet:mags/german/ascene*.lha](https://aminet.net/search?name=ascene&path[]=mags/german&o_date=older&date=20000101).
-

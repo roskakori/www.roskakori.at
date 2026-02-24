@@ -24,10 +24,3 @@ echo "Linking vahunz/vahunz"
 gcc -o vahunz/vahunz ugly/expstr.o ugly/umemory.o ugly/ustring.o vahunz/vahunz.o ubiqx/ubi_AVLtree.o ubiqx/ubi_BinTree.o
 echo ""
 echo "Finished. The executable is in vahunz/vahunz."
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@ TITLE
 
   vahunz - Make source code un-/more legible.
 
-VERSION 
+VERSION
 
   1.7
 
@@ -99,4 +99,3 @@ EXAMPLE
 
   As you can see, the internal names have been garbled, but the
   symbols of the standard library are preserved.
-

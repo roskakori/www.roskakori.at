@@ -3,7 +3,7 @@ TITLE
 
   WgetRexx
 
-VERSION 
+VERSION
 
   2.4
 

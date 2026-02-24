@@ -35,7 +35,7 @@
 #endif
 #include "ubiqx/ubi_AVLtree.h"
 #include "ugly/utypes.h"
-#define STRPTR char * 
+#define STRPTR char *
 #include "ugly/umemory.h"
 #include "ugly/ustring.h"
 #include "ugly/expstr.h"
@@ -45,11 +45,11 @@
 #define g0G 1
 struct s3P
 {
-y8K Node; 
-STRPTR p8K; 
-STRPTR t7Y; 
-ULONG t5S; 
-char e7H; 
+y8K Node;
+STRPTR p8K;
+STRPTR t7Y;
+ULONG t5S;
+char e7H;
 };
 typedef struct s3P h8A;
 void b4E(void)
@@ -110,7 +110,7 @@ fprintf(stderr, "%s", n4Z);
 fflush(stderr);
 #endif
 }
-r2O y7C; 
+r2O y7C;
 static int c7S(w7R j7S, y5M y2B)
 {
 STRPTR w4P = (STRPTR) j7S;
@@ -143,10 +143,10 @@ y5M z4W = e1N(&y7C, i3V);
 return ((h8A *) z4W);
 }
 #define r0D ' '
-#define j9Q '+' 
-#define n4H '*' 
-#define g0Z '-' 
-#define y5Y '.' 
+#define j9Q '+'
+#define n4H '*'
+#define g0Z '-'
+#define y5Y '.'
 #define q7N 'v'
 #define i5Q 'w'
 #define q5X '?'
@@ -310,9 +310,9 @@ typedef char f8W;
 #define i0O 1
 #define g9M 1
 #define p0L 1
-#define a9I 2 
-#define t5J 3 
-#define s1B 4 
+#define a9I 2
+#define t5J 3
+#define s1B 4
 f8W n9Q(STRPTR l3D)
 {
 f8W k3P = c7J;
@@ -634,10 +634,10 @@ STRPTR x7G(STRPTR t7Y, size_t c7M, FILE * r9G, STRPTR f5Z)
 #define r4N 2
 #define a1R 3
 #define o6P 4
-int t0E = o6C(r9G, f5Z); 
-size_t o7C = 1; 
-int s0B = m7R; 
-STRPTR a9S = t7Y; 
+int t0E = o6C(r9G, f5Z);
+size_t o7C = 1;
+int s0B = m7R;
+STRPTR a9S = t7Y;
 a9S[o7C - 1] = t0E;
 if (t0E == EOF)
 {
@@ -836,8 +836,8 @@ a9Ht('/', e5G, v6Z);
 if (i7P)
 {
 int p9T = ' ';
-BOOL e6U = FALSE; 
-BOOL f1V = FALSE; 
+BOOL e6U = FALSE;
+BOOL f1V = FALSE;
 BOOL n9L = FALSE;
 ULONG h3B = 0;
 size_t i = 0;
@@ -1338,11 +1338,11 @@ static VOID l7V(y5M z4W, VOID * g6F)
 h8A *a9S = (h8A *) z4W;
 ULONG *q4W = (ULONG *) g6F;
 h8A *t7Y = NULL;
-BOOL r3R = FALSE; 
+BOOL r3R = FALSE;
 BOOL l0N = FALSE;
 if (a9S->e7H == j9Q)
 {
-static char m9S[g2D]; 
+static char m9S[g2D];
 size_t y7Q = 0;
 size_t x1I = strlen(a9S->p8K);
 STRPTR w7X = NULL;
@@ -1828,7 +1828,7 @@ BOOL h3U(size_t c8H)
 {
 fputs("\n*** out of memory\n\n", stderr);
 exit(EXIT_FAILURE);
-return (FALSE); 
+return (FALSE);
 }
 VOID i2A(VOID)
 {
