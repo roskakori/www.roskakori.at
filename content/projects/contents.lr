@@ -24,8 +24,8 @@ information.
 * [ebcdic](https://pypi.org/project/ebcdic/), a collection of Python codecs
   for various [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC) encodings. I
   used it a lot while working in finance when processing or sanitizing data
-  we got from the mainframe but wanted to continue with on a modern platform, 
-  typically in relation with data warehousing. Luckily, this is easy to 
+  we got from the mainframe but wanted to continue with on a modern platform,
+  typically in relation with data warehousing. Luckily, this is easy to
   maintain because EBCDIC does not change that much.
 * [loxun](https://pypi.org/project/loxun/), a Python module to write
   large output in XML using Unicode and namespaces. Of course, you can also
@@ -39,17 +39,17 @@ information.
 ## Major contributions
 
 - [Pygments](https://pygments.org/), a generic syntax highlighter that provides
-  lexers for hundreds or programming languages and text formats. When I was 
+  lexers for hundreds or programming languages and text formats. When I was
   working in finance, I added lexers for some of the obscure languages we were
   using on the mainframe (Easytrieve, JCL, Rexx) and when processing data
   (Transact-SQL, VBScript). Because of my own tool pygount (see above for details)
   heavily uses pygments, I occasionally help tracking down or fixing bugs in
   lexers from other people.
 - For [dynAmite](http://amisource.de/dynamite/), a multi player bomberman clone
-  for AmigaOS I authored a couple of 
+  for AmigaOS I authored a couple of
   [maps](http://amigazeux.net/dynamite/thevault.php?creator=roskakori)
   and a style named "[obvious](http://amisource.de/dynamite/shots/obvious.html)".
-  The latter makes it easy to map colors from the chat window to actual players. 
+  The latter makes it easy to map colors from the chat window to actual players.
   W00t.
 
 
@@ -61,40 +61,40 @@ on modern hardware and platforms.
 
 - [ASCII-Scramble](/projects/ascii-scramble/), a shoot'em up
   for MS DOS text mode using only ASCII characters written in
-  Pascal. I developed it on an ancient 8086 laptop while working 
-  as postman during a holiday job in the 1990's when living at 
-  my parents' place. There, I was away from my more fun and 
+  Pascal. I developed it on an ancient 8086 laptop while working
+  as postman during a holiday job in the 1990's when living at
+  my parents' place. There, I was away from my more fun and
   powerful Amiga computer but still could not resist the urge to
   code something. Anything. On any platform. In any language. Now.
 - [Hsc](https://github.com/mbethke/hsc)), probably one of the first
   static site generators (though this term did not exist yet and
-  the manual refers to it as "HTML preprocessor"). Written in C, 
-  maintained by me until 1998. The project was later picked up 
+  the manual refers to it as "HTML preprocessor"). Written in C,
+  maintained by me until 1998. The project was later picked up
   and improved a lot by Matthias Bethke.
 - [LichtTools](http://lichttools.sourceforge.net/),
-  probably one of the first flashlight applications though  
+  probably one of the first flashlight applications though
   the term did not exist then and the manual refers to it
   as "bulb simulator". It was originally designed and implemented
   by Michael Gehmair during a night when his only bulb broke while
   learning for an important exam scheduled for the next day. It
   has been ported to various platforms by various people.
 - [Jomic](http://jomic.sourceforge.net/), an early, portable
-  viewer for comic book archives using CBZ or CBR as format. 
+  viewer for comic book archives using CBZ or CBR as format.
   It is written in Java and convinced me that I should move
-  to different programming languages for hobby projects. 
+  to different programming languages for hobby projects.
 - [Grotag](http://sourceforge.net/projects/grotag/),
-  a platform independent viewer for documents in the 
-  [AmigaGuide](https://en.wikipedia.org/wiki/AmigaGuide) 
+  a platform independent viewer for documents in the
+  [AmigaGuide](https://en.wikipedia.org/wiki/AmigaGuide)
   hypertext format. It can also convert them to DocBook XML
   for further editing on contemporary platforms.
 - [rcs4cvs2svn](http://pypi.python.org/pypi/rcs4cvs2svn/)
-  prepares RCS projects for processing with 
+  prepares RCS projects for processing with
   [cvs2svn](http://cvs2svn.tigris.org/). You can also
   use it as replacement for various rcs2cvs scripts floating
   around.
 - [Tratihubis](http://pypi.python.org/pypi/tratihubis/)
-  converts [Trac](https://trac.edgewall.org/) tickets to 
-- [Github](https://github.com) issues. After I moved all 
+  converts [Trac](https://trac.edgewall.org/) tickets to
+- [Github](https://github.com) issues. After I moved all
   my Trac projects to GitHub, I naturally lost interest in it.
   It does not work anymore, but might be useful as basis for
   an updated version.
@@ -109,22 +109,22 @@ on modern hardware and platforms.
 
 ## Ancient Amiga projects
 
-The project below were develop exclusively for 
+The project below were develop exclusively for
 [Amiga family of personal computers](https://en.wikipedia.org/wiki/Amiga).
 They are unmaintained and collected here purely for historic purpose.
 
-- [Sofa](https://github.com/roskakori/sofa), a port of the SmartEiffel Eiffel compiler (now forked to 
-  [LibertyEiffel](https://www.liberty-eiffel.org/)) for AmigaOS Classic. 
-  The binary is available from 
+- [Sofa](https://github.com/roskakori/sofa), a port of the SmartEiffel Eiffel compiler (now forked to
+  [LibertyEiffel](https://www.liberty-eiffel.org/)) for AmigaOS Classic.
+  The binary is available from
   [aminet:dev/lang/sofa.lha](https://aminet.net/dev/lang/sofa.lha).
-- [envSOF](https://github.com/roskakori/envSOF), an Eiffel/Sofa 
-  developer environment for GoldEd (now called 
-  [CubicIDE](https://www.softwareandcircuits.com/division/amiga/products/cubic/index.html)). 
+- [envSOF](https://github.com/roskakori/envSOF), an Eiffel/Sofa
+  developer environment for GoldEd (now called
+  [CubicIDE](https://www.softwareandcircuits.com/division/amiga/products/cubic/index.html)).
   It simplifies developing Eiffel programs by adding syntax
   coloring, a procedure browser and documentation browser.
 - [WgetRexx](/projects/wgetrexx/) integrates the
   recursive download tool [wget](http://www.gnu.org/software/wget/)
-  into various Amiga web browsers using ARexx. It makes it easy 
+  into various Amiga web browsers using ARexx. It makes it easy
   to create menu items that allow to download the currently visible
   page or the whole directory branch related to it.
 - [Orbit Amiga 68k](/projects/orbit/), a port of

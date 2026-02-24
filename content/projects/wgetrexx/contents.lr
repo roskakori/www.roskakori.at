@@ -12,9 +12,9 @@ of the WWW on your local hard drive.
 
 ![Spinnakinni Logo](wgetrexx.png)
 
-WgetRexx is &copy; Thomas Aglassinger 1998-2000 and is copyrighted freeware. 
+WgetRexx is &copy; Thomas Aglassinger 1998-2000 and is copyrighted freeware.
 Therefor you are allowed to use it without paying and can also modify it to fit
-your own needs. You can redistribute it as long as the whole archive and its 
+your own needs. You can redistribute it as long as the whole archive and its
 contents remain unchanged.
 
 - Read the [README](README.txt) for a short overview
@@ -37,4 +37,4 @@ in the manual for further details on these packages.
 German-speaking users might be interested in a Wget Workshop in the
 Austrian online magazine [AmigaScene](https://aminet.net/search?name=ascene&path[]=mags/german), for which this
 script initially has been written. It is spread in 3 parts that can be found
-in `ascene03.lha`, `ascene04.lha` and `ascene05.lha`. 
+in `ascene03.lha`, `ascene04.lha` and `ascene05.lha`.

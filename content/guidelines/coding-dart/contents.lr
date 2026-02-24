@@ -26,4 +26,3 @@ Exception: Maximum line length is 120.
 ## Pre-commit hooks
 
 Use [dart-pre-commit](https://pub.dev/packages/dart_pre_commit).
-

@@ -7,7 +7,7 @@ meta_keywords: source code, naming, guidelines, programming, software
 body:
 
 This article provides guidelines for naming source code items like variables,
-function and classes in a way that makes the code easy to understand and 
+function and classes in a way that makes the code easy to understand and
 maintain.
 
 ## Introduction

@@ -7,15 +7,15 @@ body:
 Orbit is a freeware space combat simulator in the tradition of
 Elite, Wing Commander etc, originally written by Steve Belczyk for
 Win32/Linux systems. Here you can find the port for Amiga/68k by
-Thomas Aglassinger, which is derived from the 
-[Amige/PPC port](http://home.t-online.de/home/LucyG/orbit.html) by 
+Thomas Aglassinger, which is derived from the
+[Amige/PPC port](http://home.t-online.de/home/LucyG/orbit.html) by
 Oliver Gantert. For more information, visit the
 [Official Orbit Homepage](http://jony123.github.io/orbit/).
 
 ## News
 
 - 06-Sep-2022: Cleaned up site.
-- 15-Jul-2000: 
+- 15-Jul-2000:
   - Added some more detailed info about stack and memory needs.
   - Added screenshot demonstrating networking on the same machine
 - 10-Jul-2000: Established site.
@@ -117,8 +117,8 @@ set MESA/FORCE_IR
 orbit.exe -vfast -forcefs -forcedb
 ```
 In the screenmode requester select something like 320x240x16, so you
-won't need any dithering. I've provided some 
-[screenshots,](/projects/orbit/orbit-screenshots/) so you know what to 
+won't need any dithering. I've provided some
+[screenshots,](/projects/orbit/orbit-screenshots/) so you know what to
 expect from the above configuration.
 
 Refer to the StormMesa manual for more options and details.

@@ -33,11 +33,11 @@ bugs.
 ## Installation
 
 1. Get the [SmallEiffel](http://smalleiffel.loria.fr/) compiler.
-1. Get GNU [indent](http://www.gnu.org/software/indent/), which reformats 
-  C source code. Just make sure it is in the search path. Don't read the manual, 
+1. Get GNU [indent](http://www.gnu.org/software/indent/), which reformats
+  C source code. Just make sure it is in the search path. Don't read the manual,
   Joan knows about the proper options.
 1. Get [vahunz](/projects/vahunz/), which replaces names in C source code.
-  Apart from the installation instructions, don't read the manual, Joan knows 
+  Apart from the installation instructions, don't read the manual, Joan knows
   about the proper options.
 1. Get [joan.zip](joan.zip), which contains the actual tool.
 1. Compile joan using SmallEiffel:

@@ -554,4 +554,3 @@ open_library: PROCEDURE
     END
 
     RETURN
-
