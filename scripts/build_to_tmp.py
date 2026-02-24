@@ -3,7 +3,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-TEMP_FOLDER = Path("/tmp/roskakori.at/")
+TEMP_FOLDER = Path("/tmp/roskakori.at/")  # TODO: Clean up ugly hardcoded folder.
 _log = logging.getLogger("build")
 
 if __name__ == "__main__":
