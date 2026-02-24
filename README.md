@@ -12,7 +12,7 @@ cd $WORKSPACE/www.roskakori.at
 sh scripts/setup_project.sh
 ```
 
-Run server that automatically rebuild changed files and open browser:
+Run the server that automatically, rebuild changed files, and open the browser:
 
 ```bash
 sh scripts/run_server.sh
@@ -20,16 +20,16 @@ sh scripts/run_server.sh
 
 ## Deployment
 
-Ideally you could just run:
+Ideally, you could run:
 
 ```bash
 sh scripts/deploy.sh  # DOES NOT WORK
 ```
 
-Because this does not seem to work, use a 2 step process:
+Because this does not seem to work, use a 2-step process:
 
 1. Run
    ```bash
-   sh scripts/build_to_tmp,sh
+   uv run scripts/build_to_tmp.py
    ```
 2. Manually FTP the files in `/tmp/roskakori.at`.
