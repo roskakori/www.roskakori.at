@@ -1,16 +1,32 @@
-[tool.poetry]
+[project]
 name = "www.roskakori.at"
 version = "1.0.0"
-description = ""
-authors = ["Thomas Aglassinger <roskakori@users.sourceforge.net>"]
+description = "Personal web site of Thomas Aglassinger"
+authors = [{ name = "Thomas Aglassinger", email = "roskakori@users.sourceforge.net" }]
+requires-python = ">=3.12,<4"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "Lektor>=3,<4",
+    "pre-commit>=4.5.1,<5",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-Lektor = "^3"
-pre-commit = "^3.3.1"
+[project.scripts]
+build_to_tmp = "scripts.build_to_tmp:main"
 
-[tool.poetry.dev-dependencies]
+[dependency-groups]
+dev = []
+
+[tool.uv.build-backend]
+module-name = "scripts"
+module-root = ""
 
 [build-system]
-requires = ["poetry-core>=1.9.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.10.3,<0.11.0"]
+build-backend = "uv_build"
