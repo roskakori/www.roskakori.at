@@ -7,7 +7,7 @@ TEMP_FOLDER = Path("/tmp/roskakori.at/")  # TODO: Clean up ugly hardcoded folder
 _log = logging.getLogger("build")
 
 if __name__ == "__main__":
-    shutil.rmtree(TEMP_FOLDER)
+    shutil.rmtree(TEMP_FOLDER, ignore_errors=True)
     subprocess.run([
         "uv",
         "run",
