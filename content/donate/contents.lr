@@ -1,0 +1,15 @@
+_model: page
+---
+title: Donations
+---
+body:
+
+If you found some of the content provided by this site helpful to you, feel free to show your appreciation by donating a small amount that will be put to good use as a cup of tea, lunch or video game.
+
+<div class="d-flex gap-3 justify-content-center my-3">
+  <a class="btn btn-primary btn-lg" href="https://donate.stripe.com/28EfZh2Y2guF0ILfKOeUU06" role="button">Donate</a>
+</div>
+
+If you specifically want to show your appreciation of the Python ebcdic package, visit page for dedicated page for [Python EBCDIC donations](/donate/donate-python-ebcdic).
+---
+meta_keywords: donate

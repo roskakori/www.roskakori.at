@@ -1,0 +1,23 @@
+_model: page
+---
+title: Donations for Python EBCDIC
+---
+body:
+
+If you found the Python [ebcdic](https://pypi.org/project/ebcdic/) helpful and you want to show your gratitude, please consider making a donation.
+
+For **individual persons** or **non-profit organizations**:
+
+<div class="d-flex gap-3 justify-content-center my-3">
+  <a class="btn btn-primary btn-lg" href="https://buy.stripe.com/6oU28r426cepfDFaqueUU00" role="button">Donate €5</a>
+  <a class="btn btn-primary btn-lg" href="https://buy.stripe.com/8x2fZhdCG1zLdvx426eUU01" role="button">Donate €10</a>
+  <a class="btn btn-primary btn-lg" href="https://buy.stripe.com/8x2fZh56a4LX779dCGeUU02" role="button">Donate €25</a>
+</div>
+
+As **commercial enterprise** and **business organization**, please take into account the time would have taken one of your employees to build and test your own codec, and consider donating a fair amount:
+
+<div class="d-flex gap-3 justify-content-center my-3">
+  <a class="btn btn-primary btn-lg" href="https://donate.stripe.com/5kQ00jdCGbal9fhdCGeUU03" role="button">Donate €100</a>
+  <a class="btn btn-primary btn-lg" href="https://donate.stripe.com/9B6dR9dCGfqB779cyCeUU04" role="button">Donate €200</a>
+  <a class="btn btn-primary btn-lg" href="https://donate.stripe.com/eVq3cveGK4LX9fh6aeeUU05" role="button">Donate €500</a>
+</div>
